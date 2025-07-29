@@ -1,22 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Existing Sidebar Toggle Logic ---
+    // --- Element References ---
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('overlay');
+    const navItems = document.querySelectorAll('.sidebar .nav-item');
+    const userIcon = document.getElementById('userIcon');
+    const authModalOverlay = document.getElementById('authModalOverlay');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const loginTab = document.getElementById('loginTab');
+    const registerTab = document.getElementById('registerTab');
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+    const welcomeUsernameSpan = document.getElementById('welcomeUsername');
+    const logoutButtonHeader = document.getElementById('logoutButtonHeader');
 
+    // --- Constants ---
+    const USERS_STORAGE_KEY = 'languageLearningUsers';
+    const CURRENT_USER_STORAGE_KEY = 'languageLearningCurrentUser';
+
+    // --- Sidebar Logic ---
     function toggleSidebar() {
         document.body.classList.toggle('sidebar-open');
     }
 
-    if (hamburgerMenu) {
-        hamburgerMenu.addEventListener('click', toggleSidebar);
-    }
+    if (hamburgerMenu) hamburgerMenu.addEventListener('click', toggleSidebar);
+    if (overlay) overlay.addEventListener('click', toggleSidebar);
 
-    if (overlay) {
-        overlay.addEventListener('click', toggleSidebar);
-    }
-
-    const navItems = document.querySelectorAll('.sidebar .nav-item');
     navItems.forEach(item => {
         item.addEventListener('click', () => {
             if (window.innerWidth < 1024) {
@@ -32,63 +41,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- API Integration Logic ---
-
-
-
-
-
-// Function to fetch Word of the Day from WordsAPI (RapidAPI)
-    // Function to fetch Word of the Day
     async function fetchWordOfTheDay() {
         const wordElement = document.querySelector('.word-of-day .word');
         const definitionElement = document.querySelector('.word-of-day .definition');
-
-        // Your WordsAPI credentials
         const WORDSAPI_KEY = 'dba4ff8e67mshe26c4c7f0aea17cp16fd7cjsncbb17be5de3f';
         const RAPIDAPI_HOST = 'wordsapiv1.p.rapidapi.com';
-
-        // Your OpenAI API Key
-        const OPENAI_API_KEY = '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';
+        const OPENAI_API_KEY = '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';
 
         try {
-            // --- Step 1: Fetch word and definition from WordsAPI ---
-            console.log("Fetching new word...");
             const wordsApiResponse = await fetch('https://wordsapiv1.p.rapidapi.com/words/?random=true', {
                 method: 'GET',
                 headers: {
                     'x-rapidapi-key': WORDSAPI_KEY,
                     'x-rapidapi-host': RAPIDAPI_HOST
                 },
-                cache: 'no-store' // *** FIX: Disable caching to get a new word on every load ***
+                cache: 'no-store'
             });
 
             if (!wordsApiResponse.ok) {
                 console.error(`WordsAPI Error: Status ${wordsApiResponse.status}`);
                 wordElement.innerHTML = `Error`;
-                definitionElement.textContent = `Could not load word. Status: ${wordsApiResponse.status}`;
+                definitionElement.textContent = `Could not load word.`;
                 return;
             }
 
             const wordsApiData = await wordsApiResponse.json();
-            console.log("WordsAPI response:", wordsApiData);
-
             if (wordsApiData && wordsApiData.word) {
                 const word = wordsApiData.word;
                 wordElement.innerHTML = `${word} <span class="pronunciation-icon"><i class="fas fa-volume-up"></i></span>`;
-
-                if (wordsApiData.results && wordsApiData.results.length > 0 && wordsApiData.results[0].definition) {
-                    definitionElement.textContent = `"${wordsApiData.results[0].definition}"`;
-                } else {
-                    definitionElement.textContent = 'No definition found.';
-                }
-
-                // Re-select the icon container after updating the HTML
+                definitionElement.textContent = wordsApiData.results && wordsApiData.results.length > 0 ? `"${wordsApiData.results[0].definition}"` : 'No definition found.';
+                
                 const pronunciationIconContainer = document.querySelector('.word-of-day .pronunciation-icon');
-
-                // --- Step 2: Fetch audio pronunciation from OpenAI TTS API ---
                 if (OPENAI_API_KEY && OPENAI_API_KEY.startsWith('sk-proj')) {
                     try {
-                        console.log("Fetching audio from OpenAI...");
                         const openAIAudioResponse = await fetch('https://api.openai.com/v1/audio/speech', {
                             method: 'POST',
                             headers: {
@@ -98,129 +83,71 @@ document.addEventListener('DOMContentLoaded', () => {
                             body: JSON.stringify({ model: 'tts-1', input: word, voice: 'alloy' })
                         });
 
-                        if (!openAIAudioResponse.ok) {
-                            const errorText = await openAIAudioResponse.text();
-                            console.error(`OpenAI TTS Error: Status ${openAIAudioResponse.status}`, errorText);
-                            if (pronunciationIconContainer) pronunciationIconContainer.style.display = 'none';
-                        } else {
+                        if (openAIAudioResponse.ok) {
                             const audioBuffer = await openAIAudioResponse.arrayBuffer();
-                            console.log("Audio fetched successfully.");
-
-                            // --- Step 3: Setup Audio Playback on Click ---
+                            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                            const decodedBuffer = await audioContext.decodeAudioData(audioBuffer);
+                            
                             if (pronunciationIconContainer) {
-                                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                                const decodedBuffer = await audioContext.decodeAudioData(audioBuffer);
-
-                                const playSound = () => {
-                                    if (audioContext.state === 'suspended') {
-                                        audioContext.resume();
-                                    }
+                                pronunciationIconContainer.onclick = () => {
+                                    if (audioContext.state === 'suspended') audioContext.resume();
                                     const source = audioContext.createBufferSource();
                                     source.buffer = decodedBuffer;
                                     source.connect(audioContext.destination);
                                     source.start(0);
                                 };
-
                                 pronunciationIconContainer.style.cursor = 'pointer';
-                                pronunciationIconContainer.onclick = playSound;
-                                console.log("Click listener attached to icon.");
                             }
+                        } else {
+                            if (pronunciationIconContainer) pronunciationIconContainer.style.display = 'none';
                         }
                     } catch (ttsError) {
-                        console.error('Error fetching or processing audio from OpenAI TTS:', ttsError);
                         if (pronunciationIconContainer) pronunciationIconContainer.style.display = 'none';
                     }
                 } else {
                     if (pronunciationIconContainer) pronunciationIconContainer.style.display = 'none';
-                    console.warn("OpenAI API Key not set or invalid. Audio pronunciation disabled.");
                 }
-
-            } else {
-                wordElement.innerHTML = `Word not available`;
-                definitionElement.textContent = 'Try again later.';
             }
-
         } catch (error) {
             console.error('Could not fetch word of the day:', error);
-            wordElement.innerHTML = `Error`;
-            definitionElement.textContent = 'Please check your internet connection or API keys.';
         }
     }
 
-    // Function to fetch Cultural Fact of the Day from NumbersAPI
     async function fetchCulturalFact() {
         const factElement = document.querySelector('.cultural-fact .fact');
-
         try {
             const response = await fetch('http://numbersapi.com/random/trivia');
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+            if (response.ok) {
+                factElement.textContent = await response.text();
             }
-
-            const data = await response.text();
-
-            if (data) {
-                factElement.textContent = data;
-            } else {
-                factElement.textContent = 'Cultural fact not available.';
-            }
-
         } catch (error) {
             console.error('Could not fetch cultural fact:', error);
-            factElement.textContent = 'Error loading fact. Please try again later.';
         }
     }
 
-    // --- Login/Register Modal Logic ---
-    const userIcon = document.getElementById('userIcon');
-    const authModalOverlay = document.getElementById('authModalOverlay');
-    const closeModalBtn = document.getElementById('closeModalBtn');
-    const loginTab = document.getElementById('loginTab');
-    const registerTab = document.getElementById('registerTab');
-    const loginForm = document.getElementById('loginForm');
-    const registerForm = document.getElementById('registerForm');
-
-    // Function to show the modal
+    // --- Auth Modal Logic ---
     function showAuthModal() {
-        authModalOverlay.classList.add('active');
-        // Ensure login form is active by default when modal opens
-        loginTab.classList.add('active');
-        registerTab.classList.remove('active');
-        loginForm.classList.add('active');
-        registerForm.classList.remove('active');
+        if (authModalOverlay) authModalOverlay.classList.add('active');
     }
 
-    // Function to hide the modal
     function hideAuthModal() {
-        authModalOverlay.classList.remove('active');
+        if (authModalOverlay) authModalOverlay.classList.remove('active');
     }
 
-    // Event listener to open modal when user icon is clicked
-    if (userIcon) {
-        userIcon.addEventListener('click', showAuthModal);
-    }
-
-    // Event listener to close modal when close button or overlay is clicked
-    if (closeModalBtn) {
-        closeModalBtn.addEventListener('click', hideAuthModal);
-    }
+    if (userIcon) userIcon.addEventListener('click', showAuthModal);
+    if (closeModalBtn) closeModalBtn.addEventListener('click', hideAuthModal);
     if (authModalOverlay) {
-        // Close if clicking on the overlay itself (not the modal content)
         authModalOverlay.addEventListener('click', (e) => {
-            if (e.target === authModalOverlay) {
-                hideAuthModal();
-            }
+            if (e.target === authModalOverlay) hideAuthModal();
         });
     }
 
-    // Event listeners for tab switching
-    if (loginTab && registerTab && loginForm && registerForm) {
+    if (loginTab && registerTab) {
         loginTab.addEventListener('click', () => {
             loginTab.classList.add('active');
             registerTab.classList.remove('active');
-            loginForm.classList.add('active');       // CORRECTED: Show login form
-            registerForm.classList.remove('active');  // CORRECTED: Hide register form
+            loginForm.classList.add('active');
+            registerForm.classList.remove('active');
         });
 
         registerTab.addEventListener('click', () => {
@@ -231,7 +158,83 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Initial API Calls on Page Load ---
+    // --- User Authentication Logic ---
+    async function hashPassword(password) {
+        const data = new TextEncoder().encode(password);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+        return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    async function registerUserHandler(e) {
+        e.preventDefault();
+        const username = registerForm.registerUsername.value.trim();
+        const password = registerForm.registerPassword.value;
+        const messageElement = document.getElementById('registerError');
+
+        if (password !== registerForm.confirmPassword.value) {
+            messageElement.textContent = 'Passwords do not match.';
+            return;
+        }
+
+        let users = JSON.parse(localStorage.getItem(USERS_STORAGE_KEY)) || {};
+        if (users[username]) {
+            messageElement.textContent = 'Username already exists.';
+            return;
+        }
+
+        users[username] = { password: await hashPassword(password) };
+        localStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(users));
+        messageElement.textContent = 'Registration successful! Please log in.';
+        messageElement.className = 'error-message success';
+        registerForm.reset();
+        loginTab.click();
+    }
+
+    async function loginUserHandler(e) {
+        e.preventDefault();
+        const username = loginForm.loginUsername.value.trim();
+        const password = loginForm.loginPassword.value;
+        const messageElement = document.getElementById('loginError');
+        
+        let users = JSON.parse(localStorage.getItem(USERS_STORAGE_KEY)) || {};
+        const hashedPassword = await hashPassword(password);
+
+        if (users[username] && users[username].password === hashedPassword) {
+            localStorage.setItem(CURRENT_USER_STORAGE_KEY, username);
+            loginForm.reset();
+            updateAuthUI();
+        } else {
+            messageElement.textContent = 'Invalid username or password.';
+        }
+    }
+
+    function logoutUser() {
+        localStorage.removeItem(CURRENT_USER_STORAGE_KEY);
+        updateAuthUI();
+    }
+
+    function updateAuthUI() {
+        const loggedInUsername = localStorage.getItem(CURRENT_USER_STORAGE_KEY);
+        if (loggedInUsername) {
+            userIcon.style.display = 'none';
+            logoutButtonHeader.style.display = 'inline-block';
+            welcomeUsernameSpan.textContent = `Welcome, ${loggedInUsername}`;
+            welcomeUsernameSpan.style.display = 'inline';
+            hideAuthModal();
+        } else {
+            userIcon.style.display = 'inline-block';
+            logoutButtonHeader.style.display = 'none';
+            welcomeUsernameSpan.style.display = 'none';
+        }
+    }
+
+    // --- Event Listeners for Auth ---
+    if (registerForm) registerForm.addEventListener('submit', registerUserHandler);
+    if (loginForm) loginForm.addEventListener('submit', loginUserHandler);
+    if (logoutButtonHeader) logoutButtonHeader.addEventListener('click', logoutUser);
+
+    // --- Initial Page Load Calls ---
+    updateAuthUI();
     fetchWordOfTheDay();
     fetchCulturalFact();
-}); // This closing brace correctly ends the single DOMContentLoaded listener
+});

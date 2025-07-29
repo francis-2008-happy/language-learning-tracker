@@ -3,13 +3,12 @@
 
 :root {
     /* Define CSS Variables for colors */
-    --primary-blue: #041838; /* motivation and clarity */
-    --secondary-yellow: #FACC15; /* energy and positivity */
-    --accent-green: #10B981; /* growth and achievement */
+    --primary-blue: #0e2449; /* motivation and clarity [cite: 1, 50] */
+    --secondary-yellow: #FACC15; /* energy and positivity [cite: 1, 51] */
+    --accent-green: #10B981; /* growth and achievement [cite: 1, 52] */
     --text-dark: #333;
     --text-light: #f4f4f4;
     --bg-light: #ffffff;
-    --bg-gray: #f9f9f9; /* Lighter background for sidebar on desktop */
     --bg-dark: #222222; /* Placeholder for potential dark mode */
 }
 
@@ -21,61 +20,51 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif; /* Body font */
+    font-family: 'Roboto', sans-serif; /* Body font [cite: 1, 55] */
     line-height: 1.6;
     background-color: var(--bg-light);
     color: var(--text-dark);
-    /* No grid on body for mobile, simple flow */
 }
 
 .container {
+    /* Full width on mobile, max-width on larger screens */
     width: 100%;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 20px; /* Padding for mobile view */
 }
 
-/* Header */
 header {
-    background-color: var(--primary-blue);
+    background-color: var(--primary-blue); /* Primary blue for header [cite: 1, 50] */
     color: var(--text-light);
     padding: 1rem 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative; /* For stacking context if needed */
-    z-index: 100; /* Ensure header is on top */
 }
 
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* On mobile, order: hamburger, logo, user-icon */
 }
 
 .hamburger-menu {
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--text-light);
-    /* order: 1; */
+    order: 1; /* Place first on mobile */
 }
 
 .logo {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif; /* Heading font [cite: 1, 54] */
+    font-size: 1.5rem; /* Mobile font size for logo */
     font-weight: 600;
-    /* order: 2;  */
-    flex-grow: 1; /* Allow logo to take up available space, pushing user icon right */
-    text-align: center; /* Center the logo */
-    /* font-size: 1.5rem;
-    font-weight: 600;
-    order: 2; */
 }
 
 .user-icon {
-    font-size: 1.5rem;
     cursor: pointer;
-    color: var(--text-light);
-    /* order: 3; */
+    color: var(--text-light); /* Ensure icon color matches header text */
+    font-size: 1.5rem; /* Set a default size for the icon itself */
 }
+
 
 /* Sidebar (Mobile-first: off-screen and hidden by default) */
 .sidebar {
@@ -165,21 +154,27 @@ body.sidebar-open .overlay {
     font-size: 1.1rem;
 }
 
-/* Main content area styling (mobile-first) */
+
+
+/* Main content area styling */
 main.container {
-    padding-top: 20px;
-    padding-bottom: 40px;
+    padding-top: 20px; /* Space below the header */
+    padding-bottom: 40px; /* Space above footer */
 }
 
 /* Search Bar */
 .search-bar {
-    display: flex; /* Visible on mobile */
+    display: flex;
     align-items: center;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 8px 15px;
     margin-bottom: 20px;
     background-color: var(--bg-light);
+    max-width: 400px; /* Max width for buttons */
+    margin-right: 10rem; 
+    margin-left: 10rem;
+    margin-top: 2rem; 
 }
 
 .search-bar input {
@@ -188,11 +183,13 @@ main.container {
     outline: none;
     font-size: 1rem;
     padding-right: 10px;
+    
 }
 
 .search-icon {
     color: #888;
     font-size: 1.2rem;
+
 }
 
 /* Card Styling (for Word of the Day, Cultural Fact) */
@@ -202,6 +199,9 @@ main.container {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     padding: 20px;
     margin-bottom: 20px;
+    max-width: 400px; /* Max width for buttons */
+    margin-right: 10rem; 
+    margin-left: 10rem; 
 }
 
 .card h3 {
@@ -241,7 +241,7 @@ main.container {
     line-height: 1.5;
 }
 
-/* Progress Summary and Action Buttons */
+/* Progress Summary and Action Buttons (placeholder styles) */
 .progress-summary {
     margin-top: 30px;
     text-align: center;
@@ -281,48 +281,61 @@ main.container {
 .action-buttons {
     display: flex;
     flex-direction: column; /* Stack buttons vertically on mobile */
-    gap: 15px;
+    gap: 15px; /* Space between buttons */
 }
-
 .action-buttons a {
     text-decoration: none;
 }
 
 .btn {
-    display: block;
+    display: block; /* Make buttons take full width */
     width: 100%;
     padding: 12px 20px;
     border: none;
+    max-width: 400px; /* Max width for buttons */
+    margin-right: 10rem; 
+    margin-left: 10rem; 
     border-radius: 8px;
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    
 }
 
 .add-words-btn {
     background-color: var(--primary-blue);
     color: var(--text-light);
+    text-decoration: none;
 }
 
 .add-words-btn:hover {
-    background-color: #306ace;
+    background-color: #306ace; /* Slightly darker blue on hover */
 }
 
 .set-goal-btn {
     background-color: var(--accent-green);
     color: var(--text-light);
+    
 }
 
 .set-goal-btn:hover {
-    background-color: #0e9a6e;
+    background-color: #0e9a6e; /* Slightly darker green on hover */
 }
 
 
-/* Desktop View: Styles applied when screen width is at least 1024px */
-@media (min-width: 768px) {
-    /* Main layout on desktop using CSS Grid for body */
+
+
+
+
+
+
+
+/* Desktop View: Styles applied when screen width is at least min-width: 1024px */
+@media (min-width: 1024px) {
+
+        /* Main layout on desktop using CSS Grid for body */
     body {
         display: grid;
         grid-template-columns: 250px 1fr; /* Fixed sidebar width, rest for main content */
@@ -331,15 +344,15 @@ main.container {
         overflow: hidden; /* Prevent scrolling on body itself, individual areas will scroll */
     }
 
-    /* Header adjustments for desktop grid */
+        /* Header adjustments for desktop grid */
     header {
         grid-column: 1 / -1; /* Header spans all columns */
         grid-row: 1; /* Header is in the first row */
     }
 
-    header .container {
-        /* On desktop, order: logo, user-icon (hamburger hidden) */
-        justify-content: space-between; /* Space between logo and user icon */
+    .container {
+        max-width: 1200px; /* Max width for desktop view [cite: 1] */
+        padding: 0 40px; /* Adjust padding for desktop view */
     }
 
     .hamburger-menu {
@@ -347,13 +360,11 @@ main.container {
     }
 
     .logo {
-        font-size: 1.8rem;
-        order: unset; /* Remove order property for desktop */
+        font-size: 1.8rem; /* Larger font size for desktop logo [cite: 1] */
     }
 
     .user-icon {
-        font-size: 1.8rem;
-        order: unset; /* Remove order property for desktop */
+        font-size: 1.8rem; /* Larger font size for desktop icon [cite: 1] */
     }
 
     /* Sidebar visible and positioned for desktop grid */
@@ -375,39 +386,43 @@ main.container {
         display: none;
     }
 
-    /* Main content area for desktop grid */
+
+
+    /* Desktop styles for main content sections */
     main.container {
-        grid-column: 2; /* Main content is in the second column */
-        grid-row: 2; /* Main content is in the second row */
-        max-width: none; /* Remove max-width from main.container itself */
-        padding: 20px 40px; /* Adjust padding for desktop */
-        overflow-y: auto; /* Enable scrolling for main content */
-        background-color: var(--bg-light); /* Main content background */
+        display: grid; /* Use CSS Grid for desktop layout */
+        grid-template-columns: 1fr 2fr; /* Example: 1 part for nav, 2 parts for content */
+        gap: 40px; /* Space between grid columns */
+        padding-top: 40px; /* Adjust top padding for desktop */
     }
 
     /* Hide search bar on desktop as per wireframe */
     .search-bar {
-        margin-right: 5rem; 
+        /* display: none; */
+        margin-left: 60rem;
         margin-top: 2rem;
-        margin-left: 2rem;
     }
 
     /* Adjust card layout for desktop */
     .word-of-day,
     .cultural-fact {
-        margin-bottom: 30px;
+        /* On desktop, these might be part of a larger content area.
+           For now, they will just take up their allocated grid space.
+           We can refine this when we add the desktop side nav. */
+        margin-bottom: 30px; /* Adjust margin between cards */
     }
 
     /* Desktop layout for action buttons */
     .action-buttons {
-        flex-direction: row;
-        justify-content: flex-start;
-        margin-top: 20px;
-        gap: 20px;
+        flex-direction: row; /* Arrange buttons horizontally on desktop */
+        justify-content: center; /* Center buttons */
+        margin-top: 20px; /* Adjust top margin for desktop */
     }
 
     .btn {
-        width: auto;
-        min-width: 180px;
+        width: auto; /* Buttons no longer take full width */
+        min-width: 200px; /* Give them a minimum width */
     }
+
 }
+

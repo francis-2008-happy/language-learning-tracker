@@ -42,29 +42,41 @@ document.addEventListener('DOMContentLoaded', () => {
     async function fetchWordOfTheDay() {
         const wordElement = document.querySelector('.word-of-day .word');
         const definitionElement = document.querySelector('.word-of-day .definition');
+        const pronunciationIconContainer = document.querySelector('.word-of-day .pronunciation-icon');
+        const audioIcon = pronunciationIconContainer.querySelector('i');
 
-        // Your WordsAPI credentials
-        const WORDSAPI_KEY = 'dba4ff8e67mshe26c4c7f0aea17cp16fd7cjsncbb17be5de3f';
+        // Your WordsAPI credentials (for fetching word/definition)
+        const WORDSAPI_KEY = 'dba4ff8e67mshe26c4c7f0aea17cp16fd7cjsncbb17be5de3f'; // Your RapidAPI Key
         const RAPIDAPI_HOST = 'wordsapiv1.p.rapidapi.com';
 
-        // Your OpenAI API Key
-        const OPENAI_API_KEY = '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';
+        // Your OpenAI API Key (for Text-to-Speech)
+        // IMPORTANT: Replace with your actual OpenAI API Key
+        const OPENAI_API_KEY = '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'; 
+
+        // if (!WORDSAPI_KEY || WORDSAPI_KEY === 'dba4ff8e67mshe26c4c7f0aea17cp16fd7cjsncbb17be5de3f') {
+        //     wordElement.innerHTML = `Bonjour <span class="pronunciation-icon"><i class="fas fa-volume-up"></i></span>`;
+        //     definitionElement.textContent = `"French greeting"`;
+        //     console.warn("WordsAPI Key not set. Please replace 'YOUR_WORDSAPI_KEY' in script.js with your actual key.");
+        //     return;
+        // }
+
+        // if (!OPENAI_API_KEY || OPENAI_API_KEY === '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') {
+        //     console.warn("OpenAI API Key not set. Audio pronunciation will not work.");
+        // }
 
         try {
             // --- Step 1: Fetch word and definition from WordsAPI ---
-            console.log("Fetching new word...");
-            const wordsApiResponse = await fetch('https://wordsapiv1.p.rapidapi.com/words/?random=true', {
+            const wordsApiResponse = await fetch('https://wordsapiv1.p.rapidapi.com/words/random', {
                 method: 'GET',
                 headers: {
                     'x-rapidapi-key': WORDSAPI_KEY,
                     'x-rapidapi-host': RAPIDAPI_HOST
-                },
-                cache: 'no-store' // *** FIX: Disable caching to get a new word on every load ***
+                }
             });
 
             if (!wordsApiResponse.ok) {
                 console.error(`WordsAPI Error: Status ${wordsApiResponse.status}`);
-                wordElement.innerHTML = `Error`;
+                wordElement.innerHTML = `Error <span class="pronunciation-icon"><i class="fas fa-volume-up"></i></span>`;
                 definitionElement.textContent = `Could not load word. Status: ${wordsApiResponse.status}`;
                 return;
             }
@@ -82,67 +94,72 @@ document.addEventListener('DOMContentLoaded', () => {
                     definitionElement.textContent = 'No definition found.';
                 }
 
-                // Re-select the icon container after updating the HTML
-                const pronunciationIconContainer = document.querySelector('.word-of-day .pronunciation-icon');
-
+                let audioBuffer = null;
                 // --- Step 2: Fetch audio pronunciation from OpenAI TTS API ---
-                if (OPENAI_API_KEY && OPENAI_API_KEY.startsWith('sk-proj')) {
+                if (OPENAI_API_KEY && OPENAI_API_KEY !== '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') {
                     try {
-                        console.log("Fetching audio from OpenAI...");
                         const openAIAudioResponse = await fetch('https://api.openai.com/v1/audio/speech', {
                             method: 'POST',
                             headers: {
                                 'Authorization': `Bearer ${OPENAI_API_KEY}`,
                                 'Content-Type': 'application/json'
                             },
-                            body: JSON.stringify({ model: 'tts-1', input: word, voice: 'alloy' })
+                            body: JSON.stringify({
+                                model: 'tts-1', // Or 'tts-1-hd' for higher quality
+                                input: word,    // The word itself (OpenAI TTS works with plain text)
+                                voice: 'alloy'  // Choose a voice, e.g., 'alloy', 'nova', 'shimmer', 'fable', 'onyx', 'echo'
+                            })
                         });
 
                         if (!openAIAudioResponse.ok) {
                             const errorText = await openAIAudioResponse.text();
                             console.error(`OpenAI TTS Error: Status ${openAIAudioResponse.status}`, errorText);
-                            if (pronunciationIconContainer) pronunciationIconContainer.style.display = 'none';
+                            audioBuffer = null; // Ensure no audio plays if TTS fails
                         } else {
-                            const audioBuffer = await openAIAudioResponse.arrayBuffer();
-                            console.log("Audio fetched successfully.");
-
-                            // --- Step 3: Setup Audio Playback on Click ---
-                            if (pronunciationIconContainer) {
-                                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                                const decodedBuffer = await audioContext.decodeAudioData(audioBuffer);
-
-                                const playSound = () => {
-                                    if (audioContext.state === 'suspended') {
-                                        audioContext.resume();
-                                    }
-                                    const source = audioContext.createBufferSource();
-                                    source.buffer = decodedBuffer;
-                                    source.connect(audioContext.destination);
-                                    source.start(0);
-                                };
-
-                                pronunciationIconContainer.style.cursor = 'pointer';
-                                pronunciationIconContainer.onclick = playSound;
-                                console.log("Click listener attached to icon.");
-                            }
+                            audioBuffer = await openAIAudioResponse.arrayBuffer(); // Get audio as ArrayBuffer
+                            console.log("OpenAI TTS Audio fetched successfully.");
                         }
                     } catch (ttsError) {
-                        console.error('Error fetching or processing audio from OpenAI TTS:', ttsError);
-                        if (pronunciationIconContainer) pronunciationIconContainer.style.display = 'none';
+                        console.error('Error fetching audio from OpenAI TTS:', ttsError);
+                        audioBuffer = null;
                     }
-                } else {
-                    if (pronunciationIconContainer) pronunciationIconContainer.style.display = 'none';
-                    console.warn("OpenAI API Key not set or invalid. Audio pronunciation disabled.");
+                }
+
+                // --- Step 3: Play audio ---
+                if (audioBuffer && pronunciationIconContainer) {
+                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    audioContext.decodeAudioData(audioBuffer, (buffer) => {
+                        // The decoded audio buffer can be reused.
+                        // The source node must be created each time the sound is played.
+                        const playSound = () => {
+                            const source = audioContext.createBufferSource();
+                            source.buffer = buffer;
+                            source.connect(audioContext.destination);
+                            source.start(0);
+                        };
+
+                        pronunciationIconContainer.style.cursor = 'pointer';
+                        if (audioIcon) {
+                            audioIcon.onclick = playSound;
+                        } else {
+                            pronunciationIconContainer.onclick = playSound;
+                        }
+                    }, (error) => {
+                        console.error("Error decoding audio data:", error);
+                        pronunciationIconContainer.style.display = 'none'; // Hide if audio fails
+                    });
+                } else if (pronunciationIconContainer) {
+                    pronunciationIconContainer.style.display = 'none'; // Hide if no audio or key
                 }
 
             } else {
-                wordElement.innerHTML = `Word not available`;
+                wordElement.innerHTML = `Word not available <span class="pronunciation-icon"><i class="fas fa-volume-up"></i></span>`;
                 definitionElement.textContent = 'Try again later.';
             }
 
         } catch (error) {
             console.error('Could not fetch word of the day:', error);
-            wordElement.innerHTML = `Error`;
+            wordElement.innerHTML = `Error <span class="pronunciation-icon"><i class="fas fa-volume-up"></i></span>`;
             definitionElement.textContent = 'Please check your internet connection or API keys.';
         }
     }

@@ -57,12 +57,17 @@ header .container {
     display: flex;
     flex-direction: column; /* Stack logo and welcome message vertically */
     align-items: flex-start; /* Align text content to the left */
+    
 }
 
 .welcome-message {
-    font-size: 0.85em; /* Smaller font size for the welcome message */
-    color: var(--secondary-yellow); /* A color that stands out on your header */
+    font-size: 1rem; /* Smaller font size for the welcome message */
+    color: var(--primary-blue); /* A color that stands out on your header */
     font-weight: normal;
+    margin-left: 5rem; /* Space from the left edge */
+    background-color: var(--bg-gray); /* Use your defined variable */
+    padding: 5px 10px; /* Padding for better readability */
+    border-radius: 5px; /* Rounded corners for the welcome message */
 }
 
 .user-widgets {
@@ -77,8 +82,8 @@ header .container {
     font-size: 0.9em;
     border-radius: 5px;
     cursor: pointer;
-    background-color: var(--secondary-yellow); /* Example color */
-    color: var(--primary-blue); /* Example text color */
+    background-color: var(--secondary-yellow); /* Use your defined variable */
+    color: var(--primary-blue);
     border: none;
     transition: background-color 0.3s ease;
 }
@@ -93,14 +98,14 @@ header .container {
     font-size: 0.8em; /* Smaller font size */
     border-radius: 5px;
     cursor: pointer;
-    background-color: var(--secondary-yellow); /* Use your defined variable */
+    background-color: var(--bg-gray); /* Use your defined variable */
     color: var(--primary-blue); /* Use your defined variable */
     border: none;
     transition: background-color 0.3s ease;
 }
 
 #logoutButtonHeader:hover {
-    background-color: #ffffff; /* Slightly darker yellow on hover */
+    background-color: #ffb700; /* Slightly darker yellow on hover */
 }
 
 /* Ensure user icon also has pointer cursor */
@@ -578,6 +583,10 @@ main.container {
     /* Hide overlay on desktop */
     .overlay {
         display: none;
+    }
+
+    .app-branding{
+        margin-left: 10rem; /* Space from the left edge */
     }
 
     /* Main content area for desktop grid */

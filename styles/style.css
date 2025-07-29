@@ -282,6 +282,7 @@ main.container {
     display: flex;
     flex-direction: column; /* Stack buttons vertically on mobile */
     gap: 15px;
+    padding: 0 40px;
 }
 
 .action-buttons a {
@@ -299,6 +300,8 @@ main.container {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    
+
 }
 
 .add-words-btn {

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Learning Tracker</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="hamburger-menu">
+                <i class="fas fa-bars"></i> 
+            </div>
+            <div class="logo">LANGUAGE LEARNING TRACKER</div>
+            <a href="login.html">
+                <div class="user-icon">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li><a href="#" class="nav-item active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#" class="nav-item"><i class="fas fa-book"></i> Vocabulary</a></li>
+                <li><a href="#" class="nav-item"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                <li><a href="#" class="nav-item"><i class="fas fa-user"></i> Profile</a></li>
+            </ul>
+        </nav>
+        <div class="streak-info">
+            <i class="fas fa-fire"></i> <span class="streak-count">Streak: 7d</span>
+        </div>
+        <div class="badge-info">
+            <i class="fas fa-award"></i> <span class="badge-count">Badges: 2</span>
+        </div>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main>
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." id="search-input">
+            <span class="search-icon">🔍</span>
+        </div>
+
+        <section class="card word-of-day">
+            <h3> WORD OF THE DAY </h3>
+            <p class="word"> Bonjour </p>
+            <span class="pronunciation-icon">🔊</span>
+            <p class="definition">"French greeting"</p>
+        </section>
+
+        <section class="card cultural-fact">
+            <h3>CULTURAL FACT</h3>
+            <p class="fact">In France, people say "Bonjour" to shopkeepers.</p>
+        </section>
+
+        <section class="progress-summary">
+            <div class="goal-indicator">
+                <span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot empty"></span><span class="dot empty"></span><span class="dot empty"></span>
+                <span class="percentage">60% Monthly Goal</span>
+            </div>
+            <div class="action-buttons">
+                <a href=""> <button class="btn add-words-btn">+ Add Today's Words</button> </a>
+                <a href=""><button class="btn set-goal-btn">🎯 Set New Goal</button> </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>

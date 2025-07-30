@@ -25,6 +25,5 @@ dist-ssr
 
 
 # Ignore configuration file with sensitive data
-src/scripts/config.js
-
+# src/scripts/config.js
 .env

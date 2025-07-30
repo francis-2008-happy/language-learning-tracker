@@ -16,8 +16,8 @@ jobs:
 
       - name: Replace API Keys
         run: |
-          sed -i "s/WORDSAPI_KEY_PLACEHOLDER/${{ secrets.WORDSAPI_KEY }}/g" scripts/script.js
-          sed -i "s/OPENAI_API_KEY_PLACEHOLDER/${{ secrets.OPENAI_API_KEY }}/g" scripts/script.js
+          grep -rl 'WORDSAPI_KEY_PLACEHOLDER' 'scripts/script.js' | xargs sed -i 's/WORDSAPI_KEY_PLACEHOLDER/${{ secrets.WORDSAPI_KEY }}/g'
+          grep -rl 'OPENAI_API_KEY_PLACEHOLDER' 'scripts/script.js' | xargs sed -i 's/OPENAI_API_KEY_PLACEHOLDER/${{ secrets.OPENAI_API_KEY }}/g'
         
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4

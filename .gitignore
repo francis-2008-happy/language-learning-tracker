@@ -1,6 +1,0 @@
-\"scripts/config.js\" 
-
-# Ignore configuration file with sensitive data
-scripts/config.js
-
-netlify.txt

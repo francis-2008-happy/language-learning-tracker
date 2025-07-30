@@ -234,7 +234,34 @@ document.addEventListener('DOMContentLoaded', () => {
     if (logoutButtonHeader) logoutButtonHeader.addEventListener('click', logoutUser);
     
 
+    // Function to update the last updated date/time in the footer
+function updateFooterDateTime() {
+    const lastUpdatedSpan = document.getElementById('lastUpdatedDateTime');
+    if (lastUpdatedSpan) {
+        const now = new Date();
+        const options = { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric', 
+            hour: '2-digit', 
+            minute: '2-digit', 
+            second: '2-digit',
+            hour12: true // For AM/PM format
+        };
+        lastUpdatedSpan.textContent = now.toLocaleString(undefined, options);
+    }
+}
+
+// --- Event Listeners and Initial Setup (inside DOMContentLoaded) ---
+document.addEventListener('DOMContentLoaded', () => {
+    // ... (Your existing header, authentication, vocabulary, goal, quiz logic) ...
+
+    // --- Call the footer date/time update function on load ---
+    
+
+});
     // --- Initial Page Load Calls ---
+    updateFooterDateTime();
     updateAuthUI();
     fetchWordOfTheDay();
     fetchCulturalFact();

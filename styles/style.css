@@ -62,10 +62,10 @@ header .container {
 
 .welcome-message {
     font-size: 1rem; /* Smaller font size for the welcome message */
-    color: var(--primary-blue); /* A color that stands out on your header */
+    color: var(--secondary-yellow); /* A color that stands out on your header */
     font-weight: normal;
-    margin-left: 5rem; /* Space from the left edge */
-    background-color: var(--bg-gray); /* Use your defined variable */
+    margin-left: 2rem; /* Space from the left edge */
+
     padding: 5px 10px; /* Padding for better readability */
     border-radius: 5px; /* Rounded corners for the welcome message */
 }
@@ -530,6 +530,97 @@ main.container {
     background-color: #306ace;
 }
 
+/* Footer Styles */
+footer {
+    background-color: var(--primary-blue); /* Darker blue for footer background */
+    color: var(--bg-gray); /* Lighter text for footer content */
+    padding: 40px 0 20px; /* Padding top, sides, bottom */
+    margin-top: 50px; /* Space between main content and footer */
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3); /* Shadow for a lifted effect */
+}
+
+footer .container {
+    display: flex;
+    flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
+    justify-content: space-between; /* Space out sections */
+    gap: 30px; /* Gap between columns */
+}
+
+.footer-section {
+    flex: 1; /* Allow sections to grow and shrink */
+    min-width: 200px; /* Minimum width for sections before wrapping */
+    margin-bottom: 20px; /* Space between rows when wrapped */
+}
+
+.footer-section h3 {
+    color: var(--secondary-yellow); /* Highlight headings */
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--border-color); /* Underline for headings */
+    padding-bottom: 5px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section a {
+    color: var(--text-light); /* Light text for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--secondary-yellow); /* Highlight links on hover */
+    text-decoration: underline;
+}
+
+/* Social media links */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-links a {
+    font-size: 1.8em; /* Larger icons */
+    color: var(--text-light); /* Icon color */
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--secondary-yellow); /* Hover color for icons */
+}
+
+/* Contact information icons */
+.footer-section p i.fas,
+.footer-section p i.fab {
+    margin-right: 8px;
+    color: var(--secondary-yellow); /* Icon color */
+}
+
+/* Footer bottom section */
+.footer-bottom {
+    flex-basis: 100%; /* Make it take full width */
+    text-align: center;
+    border-top: 1px solid var(--border-color); /* Separator line */
+    padding-top: 20px;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: var(--text-secondary);
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+
 
 /* Desktop View: Styles applied when screen width is at least 1024px */
 @media (min-width: 768px) {
@@ -537,9 +628,9 @@ main.container {
     body {
         display: grid;
         grid-template-columns: 250px 1fr; /* Fixed sidebar width, rest for main content */
-        grid-template-rows: auto 1fr; /* Header row, content row */
+        grid-template-rows: auto 1fr auto; /* Header, Main Content, Footer */
         height: 100vh; /* Make body take full viewport height */
-        overflow: hidden; /* Prevent scrolling on body itself, individual areas will scroll */
+        /* overflow: hidden;  */
     }
 
     /* Header adjustments for desktop grid */
@@ -591,6 +682,8 @@ main.container {
     }
 
     /* Main content area for desktop grid */
+    /* Main content area for desktop grid */
+    /* Main content area for desktop grid */
     main.container {
         grid-column: 2; /* Main content is in the second column */
         grid-row: 2; /* Main content is in the second row */
@@ -633,4 +726,45 @@ main.container {
         font-size: 1.8rem;
     }
 
+    footer {
+        grid-column: 1 / -1; /* Make footer span all columns */
+        grid-row: 3; /* Explicitly place footer in the third row */
+        margin-top: 5rem; /* No need for margin-top if grid handles spacing */
+        padding: 40px 0 20px; /* Keep consistent padding */
+        padding-left: 5rem;
+    }
+
+    footer .container {
+        /* Revert to horizontal flex layout for footer sections on desktop */
+        display: flex;
+        flex-direction: row; /* VERY IMPORTANT: Change to row for desktop */
+        flex-wrap: wrap; /* Allow wrapping */
+        justify-content: space-between; /* Space out sections */
+        align-items: flex-start; /* Align sections to the top */
+        gap: 30px; /* Gap between columns */
+    }
+
+    .footer-section {
+        flex: 1; /* Allow sections to grow and shrink */
+        min-width: 200px; /* Minimum width for sections before wrapping */
+        margin-bottom: 20px; /* Space between rows when wrapped */
+        text-align: left; /* Align text left within sections on desktop */
+        width: auto; /* Reset width from mobile override */
+        /* text-align: center; 
+        min-width: unset; 
+        width: 100%;   */
+    }
+
+    .footer-section h3 {
+        border-bottom: 2px solid var(--border-color); /* Re-add underline for desktop */
+        padding-bottom: 5px;
+        /* border-bottom: none; 
+        padding-bottom: 0; */
+
+    }
+
+    .social-links {
+        justify-content: flex-start; /* Center social links */
+    }
 }
+

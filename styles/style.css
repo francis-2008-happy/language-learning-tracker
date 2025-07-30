@@ -624,6 +624,7 @@ footer .container {
 /* Testimonials Section */
 #testimonialsSection {
     /* Inherits .main-section styles */
+    margin-top: 3rem; /* Space from previous section */
     text-align: center;
 }
 
@@ -658,6 +659,33 @@ footer .container {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* --- Alternating Testimonial Card Colors --- */
+.testimonial-card:nth-child(odd) {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+}
+
+/* Adjust text colors within the odd (dark) cards for readability */
+.testimonial-card:nth-child(odd) .student-name {
+    color: var(--secondary-yellow); /* Use a bright accent color for the name */
+}
+
+.testimonial-card:nth-child(odd) .study-period {
+    color: #ccc; /* A lighter gray for the secondary text */
+}
+
+.testimonial-card:nth-child(odd) .testimony-text {
+    color: var(--text-light);
+}
+
+.testimonial-card:nth-child(odd) .read-more-btn {
+    color: var(--accent-green);
+}
+
+.testimonial-card:nth-child(odd) .read-more-btn:hover {
+    color: #15d698;
+}
+
 .student-info {
     display: flex;
     align-items: center;
@@ -667,10 +695,10 @@ footer .container {
 .student-pic {
     width: 60px;
     height: 60px;
-    border-radius: 50%; /* Circular image */
-    object-fit: cover; /* Cover the area */
+    border-radius: 50%; 
+    object-fit: cover; 
     margin-right: 15px;
-    border: 3px solid var(--secondary-yellow); /* Accent border */
+    border: 3px solid var(--secondary-yellow); 
 }
 
 .student-details {

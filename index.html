@@ -30,10 +30,10 @@
     <aside class="sidebar" id="sidebar">
         <nav>
             <ul>
-                <li><a href="#" class="nav-item active"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#" class="nav-item"><i class="fas fa-book"></i> Vocabulary</a></li>
-                <li><a href="#" class="nav-item"><i class="fas fa-question-circle"></i> Quiz</a></li>
-                <li><a href="#" class="nav-item"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="index.html" class="nav-item active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="vocabulary.html" class="nav-item"><i class="fas fa-book"></i> Vocabulary</a></li>
+                <li><a href="quiz.html" class="nav-item"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                <li><a href="profile.html" class="nav-item"><i class="fas fa-user"></i> Profile</a></li>
             </ul>
         </nav>
         <div class="streak-info">
@@ -73,6 +73,19 @@
                 <a href=""> <button class="btn add-words-btn">+ Add Today's Words</button> </a>
                 <a href=""><button class="btn set-goal-btn">🎯 Set New Goal</button> </a>
             </div>
+        </section>
+
+    <!-- NEW: Testimonials Section -->
+        <section id="testimonialsSection" class="main-section" style="display: none;">
+            <h2>What Our Students Say</h2>
+            <div class="testimonials-container">
+            <!-- Testimonial cards will be dynamically added here by JavaScript -->
+                <p id="noTestimonialsMessage" style="display: none; text-align: center; color: var(--text-secondary);">No testimonials available yet.</p>
+            </div>
+            <div class="testimonial-navigation" style="display: none;">
+                <button class="nav-arrow prev-arrow"><i class="fas fa-chevron-left"></i></button>
+                <button class="nav-arrow next-arrow"><i class="fas fa-chevron-right"></i></button>
+                </div>
         </section>
         
     </main>

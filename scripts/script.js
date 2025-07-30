@@ -13,8 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const registerForm = document.getElementById('registerForm');
     const welcomeUsernameSpan = document.getElementById('welcomeUsername');
     const logoutButtonHeader = document.getElementById('logoutButtonHeader');
-
-    // --- Constants ---
     const USERS_STORAGE_KEY = 'languageLearningUsers';
     const CURRENT_USER_STORAGE_KEY = 'languageLearningCurrentUser';
 
@@ -254,13 +252,203 @@ function updateFooterDateTime() {
 
 // --- Event Listeners and Initial Setup (inside DOMContentLoaded) ---
 document.addEventListener('DOMContentLoaded', () => {
-    // ... (Your existing header, authentication, vocabulary, goal, quiz logic) ...
-
-    // --- Call the footer date/time update function on load ---
-    
 
 });
+
+
+// ===============================================
+// Testimonials Section
+// ===============================================
+
+// Sample Testimonial Data
+const testimonialsData = [
+    {
+        id: 't1',
+        name: 'Alice Johnson',
+        picture: 'https://placehold.co/60x60/FFD700/041838?text=AJ', 
+        period: '6 months of Spanish',
+        testimony: 'This language tracker has revolutionized my learning process! The daily word feature keeps me consistent, and the quiz mode is incredibly effective for active recall. I\'ve seen significant improvement in my vocabulary retention since I started using it. Highly recommend to anyone serious about language learning!'
+    },
+    {
+        id: 't2',
+        name: 'Bob Williams',
+        picture: 'https://placehold.co/60x60/10B981/FFFFFF?text=BW', 
+        period: '1 year of Japanese',
+        testimony: 'I struggled with consistency until I found this app. Setting goals and tracking my progress visually has been a game-changer. The cultural facts are a nice touch too, adding context to my studies. It\'s intuitive and genuinely helpful.'
+    },
+    {
+        id: 't3',
+        name: 'Charlie Brown',
+        picture: 'https://placehold.co/60x60/041838/FACC15?text=CB', 
+        period: '3 months of French',
+        testimony: 'The ability to categorize words as "new," "learned," and "mastered" is brilliant. It helps me focus on what I need to review most. Plus, the pronunciation feature with OpenAI\'s TTS is incredibly accurate and a huge help for my speaking practice. Best language tool I\'ve used!'
+    },
+    {
+        id: 't4',
+        name: 'Diana Prince',
+        picture: 'https://placehold.co/60x60/FACC15/041838?text=DP', 
+        period: '2 years of German',
+        testimony: 'As an advanced learner, I appreciate the flexibility to add my own words and definitions. The quiz customization allows me to target specific areas of weakness. It\'s like having a personalized tutor right in my pocket. The new footer links are also a great addition for further resources!'
+    },
+    {
+        id: 't5',
+        name: 'Eve Adams',
+        picture: 'https://placehold.co/60x60/10B981/041838?text=EA', 
+        period: '8 months of Korean',
+        testimony: 'This tracker is simple, effective, and beautifully designed. The daily cultural facts are a delightful surprise and keep me engaged beyond just vocabulary. I\'ve recommended it to all my language exchange partners. Keep up the great work!'
+    }
+];
+
+const testimonialsContainer = document.querySelector('.testimonials-container');
+const noTestimonialsMessage = document.getElementById('noTestimonialsMessage');
+const navPrevArrow = document.querySelector('.nav-arrow.prev-arrow');
+const navNextArrow = document.querySelector('.nav-arrow.next-arrow');
+const testimonialsSection = document.getElementById('testimonialsSection'); // Reference to the section
+
+let currentTestimonialPage = 0;
+const testimonialsPerPage = 3; // Number of testimonials to show on desktop
+
+// Function to render testimonials
+function renderTestimonials() {
+    if (!testimonialsContainer) return; // Exit if container not found
+
+    testimonialsContainer.innerHTML = ''; // Clear existing testimonials
+
+    if (testimonialsData.length === 0) {
+        if (noTestimonialsMessage) noTestimonialsMessage.style.display = 'block';
+        if (navPrevArrow) navPrevArrow.style.display = 'none';
+        if (navNextArrow) navNextArrow.style.display = 'none';
+        return;
+    } else {
+        if (noTestimonialsMessage) noTestimonialsMessage.style.display = 'none';
+    }
+
+    // Determine which testimonials to display based on currentTestimonialPage
+    // On mobile, show all. On desktop, show a subset for carousel effect.
+    let startIndex, endIndex;
+    if (window.innerWidth < 768) { // Mobile view, show all
+        startIndex = 0;
+        endIndex = testimonialsData.length;
+        if (navPrevArrow) navPrevArrow.style.display = 'none';
+        if (navNextArrow) navNextArrow.style.display = 'none';
+    } else { // Desktop view, show paginated
+        startIndex = currentTestimonialPage * testimonialsPerPage;
+        endIndex = startIndex + testimonialsPerPage;
+        if (navPrevArrow) navPrevArrow.style.display = 'flex'; // Use flex to center icon
+        if (navNextArrow) navNextArrow.style.display = 'flex'; // Use flex to center icon
+    }
+
+    const testimonialsToDisplay = testimonialsData.slice(startIndex, endIndex);
+
+    testimonialsToDisplay.forEach(testimonial => {
+        const card = document.createElement('div');
+        card.className = 'testimonial-card';
+        card.innerHTML = `
+            <div class="student-info">
+                <img src="${testimonial.picture}" alt="${testimonial.name}" class="student-pic">
+                <div class="student-details">
+                    <h4 class="student-name">${testimonial.name}</h4>
+                    <p class="study-period">${testimonial.period}</p>
+                </div>
+            </div>
+            <p class="testimony-text" data-full-text="${testimonial.testimony}">
+                ${testimonial.testimony.substring(0, 150)}... <!-- Initial truncated text -->
+                <button class="read-more-btn" data-action="read-more" style="${testimonial.testimony.length > 150 ? '' : 'display:none;'}">Read More</button>
+            </p>
+        `;
+        testimonialsContainer.appendChild(card);
+    });
+
+    // Update navigation button states
+    updateTestimonialNavigation();
+}
+
+// Function to update navigation arrow visibility (desktop only)
+function updateTestimonialNavigation() {
+    if (window.innerWidth < 768) {
+        if (navPrevArrow) navPrevArrow.style.display = 'none';
+        if (navNextArrow) navNextArrow.style.display = 'none';
+        return;
+    }
+
+    if (navPrevArrow) {
+        navPrevArrow.disabled = currentTestimonialPage === 0;
+    }
+    if (navNextArrow) {
+        navNextArrow.disabled = (currentTestimonialPage + 1) * testimonialsPerPage >= testimonialsData.length;
+    }
+}
+
+// Event listener for "Read More" buttons and navigation arrows
+if (testimonialsContainer) {
+    testimonialsContainer.addEventListener('click', (e) => {
+        const button = e.target.closest('.read-more-btn');
+        if (button) {
+            const testimonyTextElement = button.closest('.testimony-text');
+            if (testimonyTextElement) {
+                const fullText = testimonyTextElement.dataset.fullText;
+                if (testimonyTextElement.classList.contains('expanded')) {
+                    testimonyTextElement.classList.remove('expanded');
+                    testimonyTextElement.innerHTML = `${fullText.substring(0, 150)}... <button class="read-more-btn" data-action="read-more">Read More</button>`;
+                } else {
+                    testimonyTextElement.classList.add('expanded');
+                    testimonyTextElement.innerHTML = `${fullText} <button class="read-more-btn" data-action="read-more">Show Less</button>`;
+                }
+            }
+        }
+    });
+}
+
+if (navPrevArrow) {
+    navPrevArrow.addEventListener('click', () => {
+        if (currentTestimonialPage > 0) {
+            currentTestimonialPage--;
+            renderTestimonials();
+        }
+    });
+}
+
+if (navNextArrow) {
+    navNextArrow.addEventListener('click', () => {
+        if ((currentTestimonialPage + 1) * testimonialsPerPage < testimonialsData.length) {
+            currentTestimonialPage++;
+            renderTestimonials();
+        }
+    });
+}
+
+// Re-render testimonials on window resize to switch between mobile/desktop view
+window.addEventListener('resize', () => {
+    renderTestimonials();
+});
+
+// This will ensure testimonials are only visible when logged in.
+const originalUpdateAuthUI = updateAuthUI; // Store original function to extend it
+updateAuthUI = () => {
+    originalUpdateAuthUI(); // Call the original UI update logic
+    const loggedInUsername = getCurrentUser();
+    
+    if (loggedInUsername) {
+        if (testimonialsSection) testimonialsSection.style.display = 'block'; // Show testimonials
+        renderTestimonials(); // Render them when logged in
+    } else {
+        if (testimonialsSection) testimonialsSection.style.display = 'none'; // Hide testimonials
+    }
+};
+
+// --- Initial Calls (ensure these are within DOMContentLoaded) ---
+document.addEventListener('DOMContentLoaded', () => {
+
+});
+
+
+// NEW: Helper function to get current user
+function getCurrentUser() {
+    return localStorage.getItem(CURRENT_USER_STORAGE_KEY);
+}
+
     // --- Initial Page Load Calls ---
+    renderTestimonials();
     updateFooterDateTime();
     updateAuthUI();
     fetchWordOfTheDay();

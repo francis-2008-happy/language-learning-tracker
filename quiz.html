@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Learning Tracker</title>
+    <link rel="stylesheet" href="src/styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="hamburger-menu">
+                <i class="fas fa-bars"></i> 
+            </div>
+
+            <div class="app-branding">
+                <div class="logo">LANGUAGE LEARNING TRACKER</div>
+                <span id="welcomeUsername" class="welcome-message" style="display: none;"></span> 
+            </div>
+        
+            <div class="user-widgets">
+                <button id="logoutButtonHeader" class="btn header-btn" style="display: none;">Logout</button> 
+                <div class="user-icon" id="userIcon"> <i class="fas fa-user-circle"></i> </div>
+            </div>
+
+        </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-item active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="vocabulary.html" class="nav-item"><i class="fas fa-book"></i> Vocabulary</a></li>
+                <li><a href="quiz.html" class="nav-item"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                <li><a href="profile.html" class="nav-item"><i class="fas fa-user"></i> Profile</a></li>
+            </ul>
+        </nav>
+        <div class="streak-info">
+            <i class="fas fa-fire"></i> <span class="streak-count">Streak: 7d</span>
+        </div>
+        <div class="badge-info">
+            <i class="fas fa-award"></i> <span class="badge-count">Badges: 2</span>
+        </div>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main>
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." id="search-input">
+            <span class="search-icon">🔍</span>
+        </div>
+
+        <div>
+            <h1> QUIZ </h1>
+        </div>
+
+
+        
+    </main>
+
+
+    <footer>
+
+            <div class="container">
+            <div class="footer-section">
+                <h3>Language Learning Resources</h3>
+                <ul>
+                    <li><a href="https://www.duolingo.com/" target="_blank">Duolingo</a> - Fun lessons, game-like experience.</li>
+                    <li><a href="https://www.memrise.com/" target="_blank">Memrise</a> - Real-life language videos.</li>
+                    <li><a href="https://www.lingq.com/" target="_blank">LingQ</a> - Learn from content you love.</li>
+                    <li><a href="https://www.bbc.co.uk/languages" target="_blank">BBC Languages Archive</a> - Classic resources.</li>
+                    <li><a href="https://www.italki.com/" target="_blank">italki</a> - Connect with native speakers.</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <p>Follow us on social media for updates and tips!</p>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Support & Contact</h3>
+                <p>Need help or have questions?</p>
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:francisbucci2@gmail.com">support@languagelearner.com</a></p>
+                <p><i class="fas fa-phone"></i> Phone: +234-9071-400-581</p>
+                <p><i class="fas fa-question-circle"></i> <a href="#">FAQ</a> | <a href="#">Help Center</a></p>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Language Learning Tracker. All rights reserved.</p>
+                <p>Last Updated: <span id="lastUpdatedDateTime"></span></p>
+            </div>
+        </div>
+
+
+    </footer>
+
+    <div class="modal-overlay" id="authModalOverlay">
+        <div class="modal-content">
+            <span class="close-button" id="closeModalBtn">&times;</span>
+            <div class="auth-forms">
+                <div class="auth-tabs">
+                    <button class="tab-button active" id="loginTab">Login</button>
+                    <button class="tab-button" id="registerTab">Register</button>
+                </div>
+
+                <form id="loginForm" class="auth-form active">
+                    <h2>Login</h2>
+                    <div class="input-group">
+                        <label for="loginUsername">Username:</label>
+                        <input type="text" id="loginUsername" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="loginPassword">Password:</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <p class="error-message" id="loginError"></p>
+                    <button type="submit" class="btn">Login</button>
+                </form>
+
+                <form id="registerForm" class="auth-form">
+                    <h2>Register</h2>
+                    <div class="input-group">
+                        <label for="registerUsername">Username:</label>
+                        <input type="text" id="registerUsername" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="registerPassword">Password:</label>
+                        <input type="password" id="registerPassword" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="confirmPassword">Confirm Password:</label>
+                        <input type="password" id="confirmPassword" required>
+                    </div>
+                    <p class="error-message" id="registerError"></p>
+                    <button type="submit" class="btn">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="scripts/config.js"></script> -->
+    <script  type="module" src="src/scripts/script.js"></script>
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -62,7 +62,7 @@ header .container {
 
 .welcome-message {
     font-size: 1rem; /* Smaller font size for the welcome message */
-    color: var(--secondary-yellow); /* A color that stands out on your header */
+    color: var(--bg-gray); /* A color that stands out on your header */
     font-weight: normal;
     margin-left: 2rem; /* Space from the left edge */
 

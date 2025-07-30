@@ -665,6 +665,10 @@ footer .container {
     color: var(--text-light);
 }
 
+.testimonial-card:nth-child(odd) .student-pic {
+    border: solid 5px var(--bg-gray); /* Yellow border for odd cards */
+}
+
 /* Adjust text colors within the odd (dark) cards for readability */
 .testimonial-card:nth-child(odd) .student-name {
     color: var(--secondary-yellow); /* Use a bright accent color for the name */
@@ -698,7 +702,7 @@ footer .container {
     border-radius: 50%; 
     object-fit: cover; 
     margin-right: 15px;
-    border: 3px solid var(--secondary-yellow); 
+    border: 5px solid var(--secondary-yellow); 
 }
 
 .student-details {

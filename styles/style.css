@@ -530,6 +530,7 @@ main.container {
     background-color: #306ace;
 }
 
+
 /* Desktop View: Styles applied when screen width is at least 1024px */
 @media (min-width: 768px) {
     /* Main layout on desktop using CSS Grid for body */

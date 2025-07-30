@@ -232,6 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (registerForm) registerForm.addEventListener('submit', registerUserHandler);
     if (loginForm) loginForm.addEventListener('submit', loginUserHandler);
     if (logoutButtonHeader) logoutButtonHeader.addEventListener('click', logoutUser);
+    
 
     // --- Initial Page Load Calls ---
     updateAuthUI();

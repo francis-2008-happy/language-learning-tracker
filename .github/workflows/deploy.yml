@@ -27,3 +27,4 @@ jobs:
           clean-exclude: |
             .git
             .github
+          allow-empty-commit: true

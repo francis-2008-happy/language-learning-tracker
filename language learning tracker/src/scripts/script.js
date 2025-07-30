@@ -1,3 +1,5 @@
+import { WORDSAPI_KEY, OPENAI_API_KEY } from './config.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     // --- Element References ---
     const hamburgerMenu = document.querySelector('.hamburger-menu');

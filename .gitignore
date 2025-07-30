@@ -1,1 +1,2 @@
-.env
+# API Keys
+scripts/config.js

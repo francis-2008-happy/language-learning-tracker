@@ -42,9 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
     async function fetchWordOfTheDay() {
         const wordElement = document.querySelector('.word-of-day .word');
         const definitionElement = document.querySelector('.word-of-day .definition');
-        const WORDSAPI_KEY = 'dba4ff8e67mshe26c4c7f0aea17cp16fd7cjsncbb17be5de3f';
         const RAPIDAPI_HOST = 'wordsapiv1.p.rapidapi.com';
-        const OPENAI_API_KEY = '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';
+
+        // Your OpenAI API Key
+        // NOTE: These keys are now loaded from scripts/config.js
 
         try {
             const wordsApiResponse = await fetch('https://wordsapiv1.p.rapidapi.com/words/?random=true', {

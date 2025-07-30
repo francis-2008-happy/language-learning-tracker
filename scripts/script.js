@@ -266,38 +266,46 @@ const testimonialsData = [
     {
         id: 't1',
         name: 'Alice Johnson',
-        picture: 'https://placehold.co/60x60/FFD700/041838?text=AJ', 
+        picture: 'images/testimony1.jpg', // Placeholder image URL
         period: '6 months of Spanish',
         testimony: 'This language tracker has revolutionized my learning process! The daily word feature keeps me consistent, and the quiz mode is incredibly effective for active recall. I\'ve seen significant improvement in my vocabulary retention since I started using it. Highly recommend to anyone serious about language learning!'
     },
     {
         id: 't2',
-        name: 'Bob Williams',
-        picture: 'https://placehold.co/60x60/10B981/FFFFFF?text=BW', 
+        name: ' Hazani Williams',
+        picture: 'images/testimony2.jpg', 
         period: '1 year of Japanese',
         testimony: 'I struggled with consistency until I found this app. Setting goals and tracking my progress visually has been a game-changer. The cultural facts are a nice touch too, adding context to my studies. It\'s intuitive and genuinely helpful.'
     },
     {
         id: 't3',
-        name: 'Charlie Brown',
-        picture: 'https://placehold.co/60x60/041838/FACC15?text=CB', 
+        name: 'Ugochukwu Obi',
+        picture: 'images/testimony3.jpg', 
         period: '3 months of French',
         testimony: 'The ability to categorize words as "new," "learned," and "mastered" is brilliant. It helps me focus on what I need to review most. Plus, the pronunciation feature with OpenAI\'s TTS is incredibly accurate and a huge help for my speaking practice. Best language tool I\'ve used!'
     },
     {
         id: 't4',
-        name: 'Diana Prince',
-        picture: 'https://placehold.co/60x60/FACC15/041838?text=DP', 
+        name: 'Rowland Rukevwe',
+        picture: 'images/testimony5.jpg', 
         period: '2 years of German',
         testimony: 'As an advanced learner, I appreciate the flexibility to add my own words and definitions. The quiz customization allows me to target specific areas of weakness. It\'s like having a personalized tutor right in my pocket. The new footer links are also a great addition for further resources!'
     },
     {
         id: 't5',
-        name: 'Eve Adams',
-        picture: 'https://placehold.co/60x60/10B981/041838?text=EA', 
+        name: 'Erubami Godstime',
+        picture: 'images/testimony4.jpg', 
+        period: '8 months of Korean',
+        testimony: 'This tracker is simple, effective, and beautifully designed. The daily cultural facts are a delightful surprise and keep me engaged beyond just vocabulary. I\'ve recommended it to all my language exchange partners. Keep up the great work!'
+    },
+        {
+        id: 't5',
+        name: 'Efemena Tobore',
+        picture: 'images/testimony6.jpg', 
         period: '8 months of Korean',
         testimony: 'This tracker is simple, effective, and beautifully designed. The daily cultural facts are a delightful surprise and keep me engaged beyond just vocabulary. I\'ve recommended it to all my language exchange partners. Keep up the great work!'
     }
+
 ];
 
 const testimonialsContainer = document.querySelector('.testimonials-container');

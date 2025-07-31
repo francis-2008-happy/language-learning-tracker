@@ -1,0 +1,210 @@
+{
+  "english": [
+    {
+      "q": "What is the capital of England?",
+      "options": ["London", "Paris", "Rome", "Berlin"],
+      "answer": 0
+    },
+    {
+      "q": "Which planet is closest to the sun?",
+      "options": ["Venus", "Mercury", "Mars", "Earth"],
+      "answer": 1
+    },
+    {
+      "q": "Who wrote Hamlet?",
+      "options": ["Shakespeare", "Tolstoy", "Dickens", "Homer"],
+      "answer": 0
+    },
+    {
+      "q": "Which color is a mix of red and white?",
+      "options": ["Pink", "Blue", "Green", "Orange"],
+      "answer": 0
+    },
+    {
+      "q": "How many continents are there?",
+      "options": ["5", "6", "7", "8"],
+      "answer": 2
+    },
+    {
+      "q": "What is H2O?",
+      "options": ["Oxygen", "Hydrogen", "Water", "Salt"],
+      "answer": 2
+    },
+    {
+      "q": "Who painted the Mona Lisa?",
+      "options": ["Van Gogh", "Da Vinci", "Picasso", "Rembrandt"],
+      "answer": 1
+    },
+    {
+      "q": "Which is the largest ocean?",
+      "options": ["Indian", "Pacific", "Atlantic", "Arctic"],
+      "answer": 1
+    },
+    {
+      "q": "Which language is most spoken?",
+      "options": ["English", "Hindi", "Mandarin", "Spanish"],
+      "answer": 2
+    },
+    {
+      "q": "What is the square root of 16?",
+      "options": ["2", "4", "8", "6"],
+      "answer": 1
+    }
+  ],
+  "french": [
+    {
+      "q": "Quelle est la capitale de la France?",
+      "options": ["Londres", "Berlin", "Paris", "Madrid"],
+      "answer": 2
+    },
+    {
+      "q": "Combien de jours y a-t-il dans une semaine?",
+      "options": ["5", "6", "7", "8"],
+      "answer": 2
+    },
+    {
+      "q": "Quel est le mot français pour 'apple'?",
+      "options": ["Pomme", "Banane", "Orange", "Cerise"],
+      "answer": 0
+    },
+    {
+      "q": "Quel animal miaule?",
+      "options": ["Chien", "Chat", "Cheval", "Poisson"],
+      "answer": 1
+    },
+    {
+      "q": "Quel est le contraire de 'grand'?",
+      "options": ["Petit", "Lent", "Beau", "Fort"],
+      "answer": 0
+    },
+    {
+      "q": "Quelle couleur est un mélange de bleu et jaune?",
+      "options": ["Rouge", "Vert", "Orange", "Rose"],
+      "answer": 1
+    },
+    {
+      "q": "Combien font 3 + 5?",
+      "options": ["7", "9", "8", "6"],
+      "answer": 2
+    },
+    {
+      "q": "Quel est le mot pour 'thank you' en français?",
+      "options": ["Bonjour", "Merci", "S'il vous plaît", "Salut"],
+      "answer": 1
+    },
+    {
+      "q": "Quel est le mot pour 'school'?",
+      "options": ["École", "Maison", "Voiture", "Chambre"],
+      "answer": 0
+    },
+    {
+      "q": "Quel est le pluriel de 'livre'?",
+      "options": ["Livres", "Livreses", "Livrons", "Livries"],
+      "answer": 0
+    }
+  ],
+  "spanish": [
+    {
+      "q": "¿Cuál es la capital de España?",
+      "options": ["Madrid", "Barcelona", "Sevilla", "Valencia"],
+      "answer": 0
+    },
+    {
+      "q": "¿Qué color resulta de mezclar azul y rojo?",
+      "options": ["Verde", "Morado", "Naranja", "Rosa"],
+      "answer": 1
+    },
+    {
+      "q": "¿Cómo se dice 'house' en español?",
+      "options": ["Casa", "Perro", "Calle", "Auto"],
+      "answer": 0
+    },
+    {
+      "q": "¿Qué número viene después del 3?",
+      "options": ["5", "4", "2", "6"],
+      "answer": 1
+    },
+    {
+      "q": "¿Cuál es el plural de 'niño'?",
+      "options": ["Niños", "Niñes", "Niñons", "Niñis"],
+      "answer": 0
+    },
+    {
+      "q": "¿Qué fruta es amarilla y curva?",
+      "options": ["Manzana", "Plátano", "Pera", "Uva"],
+      "answer": 1
+    },
+    {
+      "q": "¿Cómo se dice 'water' en español?",
+      "options": ["Leche", "Agua", "Zumo", "Té"],
+      "answer": 1
+    },
+    {
+      "q": "¿Cuál es el opuesto de 'alto'?",
+      "options": ["Bajo", "Ancho", "Pequeño", "Lento"],
+      "answer": 0
+    },
+    {
+      "q": "¿Cómo se llama el planeta rojo?",
+      "options": ["Marte", "Júpiter", "Venus", "Saturno"],
+      "answer": 0
+    },
+    {
+      "q": "¿Cuántos días hay en un año?",
+      "options": ["360", "364", "365", "366"],
+      "answer": 2
+    }
+  ],
+  "korean": [
+    {
+      "q": "한국의 수도는?",
+      "options": ["부산", "서울", "대구", "인천"],
+      "answer": 1
+    },
+    {
+      "q": "한글은 몇 글자?",
+      "options": ["24", "21", "28", "26"],
+      "answer": 0
+    },
+    {
+      "q": "고양이는 어떤 소리를 내나요?",
+      "options": ["멍멍", "꽥꽥", "야옹", "히잉"],
+      "answer": 2
+    },
+    {
+      "q": "한국의 전통 음식은?",
+      "options": ["피자", "김치", "햄버거", "스시"],
+      "answer": 1
+    },
+    {
+      "q": "한국의 전통 의상은?",
+      "options": ["기모노", "치파오", "한복", "사리"],
+      "answer": 2
+    },
+    {
+      "q": "아리랑은 무엇인가요?",
+      "options": ["노래", "음식", "도시", "사람"],
+      "answer": 0
+    },
+    {
+      "q": "1+2는?",
+      "options": ["2", "3", "4", "5"],
+      "answer": 1
+    },
+    {
+      "q": "한국의 큰 섬은?",
+      "options": ["제주도", "울릉도", "마라도", "독도"],
+      "answer": 0
+    },
+    {
+      "q": "사과는 무슨 색?",
+      "options": ["파랑", "노랑", "빨강", "검정"],
+      "answer": 2
+    },
+    {
+      "q": "학교는 어디 가는 곳?",
+      "options": ["노는 곳", "일하는 곳", "공부하는 곳", "쉬는 곳"],
+      "answer": 2
+    }
+  ]
+}

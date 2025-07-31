@@ -1,0 +1,124 @@
+:root {
+    /* Define CSS Variables for colors */
+    --primary-blue: #041838; /* motivation and clarity */
+    --secondary-yellow: #FACC15; /* energy and positivity */
+    --accent-green: #10B981; /* growth and achievement */
+    --text-dark: #333;
+    --text-light: #f4f4f4;
+    --bg-light: #ffffff;
+    --bg-gray: #f9f9f9; /* Lighter background for sidebar on desktop */
+    --bg-dark: #222222; /* Placeholder for potential dark mode */
+}
+
+.quiz-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.quiz-container h1 {
+  color: var(--secondary-yellow);
+  margin-bottom: 1rem;
+  background-color: var(--primary-blue);
+}
+
+.hidden {
+  display: none;
+}
+
+.language-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 1rem;
+}
+
+.language-buttons button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  background: var(--primary-blue);
+  color: var(--bg-light);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.language-buttons button:hover {
+  background: var(--secondary-yellow);
+}
+
+#question-container {
+  margin: 1rem 0;
+  text-align: left;
+}
+
+button {
+  margin-top: 1rem;
+}
+
+.next-button{
+    background-color: var(--primary-blue);
+    color: var(--bg-light);
+    padding: 0.5rem 1rem;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: 200px
+}
+
+/*music player styles */
+
+.music-box {
+  margin-top: 3rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding: 1rem;
+  background: #f0f0f5;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.music-box h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.music-track {
+  margin-bottom: 1.2rem;
+  text-align: center;
+  background-color: var(--accent-green);
+  border-radius: 30px;
+}
+
+
+
+
+/* Desktop View: Styles applied when screen width is at least 1024px */
+@media (min-width: 768px) {
+
+    .quiz-container {
+        max-width: 800px; /* Wider container for desktop */
+        padding: 3rem; /* More padding for spacious feel */
+        margin-left: 10rem; /* Centered with margin */
+        height: 400px; /* Fixed height for quiz container */
+        margin-top: 2rem; /* Spacing from top */
+        padding-top: 5rem; /* Padding at the top */
+    }
+
+    .music-box{
+       margin-left: 12rem ;
+       margin-right: 20rem;
+    }
+
+
+
+
+}

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language Learning Tracker</title>
     <link rel="stylesheet" href="src/styles/style.css">
+     <link rel="stylesheet" href="src/styles/quiz.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -30,9 +31,9 @@
     <aside class="sidebar" id="sidebar">
         <nav>
             <ul>
-                <li><a href="index.html" class="nav-item active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="index.html" class="nav-item "><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="vocabulary.html" class="nav-item"><i class="fas fa-book"></i> Vocabulary</a></li>
-                <li><a href="quiz.html" class="nav-item"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                <li><a href="quiz.html" class="nav-item active"><i class="fas fa-question-circle"></i> Quiz</a></li>
                 <li><a href="profile.html" class="nav-item"><i class="fas fa-user"></i> Profile</a></li>
             </ul>
         </nav>
@@ -52,12 +53,63 @@
             <span class="search-icon">🔍</span>
         </div>
 
-        <div>
-            <h1> QUIZ </h1>
+
+        <div class="quiz-container">
+        <h1>Language Quiz</h1>
+
+        <div id="language-select">
+            <p>Select a language to begin:</p>
+        <div class="language-buttons">
+        <button onclick="startQuiz('english')">English</button>
+        <button onclick="startQuiz('french')">Français</button>
+        <button onclick="startQuiz('spanish')">Español</button>
+        <button onclick="startQuiz('korean')">한국어</button>
+        </div>
+        </div>
+
+        <div id="quiz-section" class="hidden">
+        <div id="question-container"></div>
+            <button onclick="nextQuestion()" class="next-button"> Next Question</button>
+        </div>
+
+        <div id="result-section" class="hidden">
+        <h2>Your Score: <span id="score"></span>/10</h2>
+        <button onclick="restartQuiz()">Retake Quiz</button>
+        <button onclick="quitQuiz()">Quit</button>
+        </div>
         </div>
 
 
-        
+        <!-- section for music -->
+
+        <div id="music-section" class="music-box">
+            <h3>🎶 Choose a song to play while you take the quiz</h3>
+
+            <div class="music-track">
+                <p><strong>English:</strong> Soft English Acoustic</p>
+                <audio controls src="/audio/english.mp3"></audio>
+            </div>
+
+            <div class="music-track">
+                <p><strong>French:</strong> French Café Vibes</p>
+                <audio controls src="/audio/french.mp3"></audio>
+            </div>
+
+            <div class="music-track">
+                <p><strong>Spanish:</strong> Latin Pop Groove</p>
+                <audio controls src="/audio/spanish.mp3"></audio>
+            </div>
+
+            <div class="music-track">
+                <p><strong>Korean:</strong> K-Pop Instrumental</p>
+                <audio controls src="/audio/korean.mp3"></audio>
+            </div>
+        </div>
+
+
+    
+
+ 
     </main>
 
 

@@ -1,5 +1,12 @@
 import { WORDSAPI_KEY, OPENAI_API_KEY } from './config.js';
 import { fetchVocabularyData } from './vocabulary.js';
+import {
+  loadQuestions,
+  startQuiz,
+  nextQuestion,
+  restartQuiz,
+  quitQuiz
+} from './quiz.js';
 // import config from "./config.js";
 
 
@@ -469,6 +476,15 @@ document.addEventListener('DOMContentLoaded', () => {
         fetchVocabularyData();
     }
     });
+
+
+    window.addEventListener('DOMContentLoaded', loadQuestions);
+
+// Expose functions for HTML onclick
+    window.startQuiz = startQuiz;
+    window.nextQuestion = nextQuestion;
+    window.restartQuiz = restartQuiz;   
+    window.quitQuiz = quitQuiz;
 
     // --- Initial Page Load Calls ---
     renderTestimonials();

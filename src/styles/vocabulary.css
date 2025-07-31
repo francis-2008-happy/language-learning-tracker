@@ -1,0 +1,359 @@
+/* In style.css */
+
+/* =============================================== */
+/* Vocabulary Section Styles (Mobile-First)        */
+/* =============================================== */
+
+/* Language Selector (Mobile Defaults) */
+.language-selector {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column; /* Mobile default: Stack buttons vertically */
+    align-items: center;   /* Center buttons horizontally */
+    gap: 10px;
+    padding: 0 15px; /* Add some padding for mobile screens */
+}
+
+.lang-button {
+    background-color: var(--secondary-yellow); /* Yellow from your palette */
+    color: var(--primary-blue); /* Blue from your palette */
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Advanced: Transition */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 80%;       /* Mobile default: Wider buttons */
+    max-width: 250px; /* Limit width */
+    text-align: center;
+}
+
+.lang-button:hover { /* Advanced: Hover event */
+    background-color: #e0b600; /* Darker yellow on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.lang-button.active {
+    background-color: var(--primary-blue); /* Blue when active */
+    color: var(--text-light); /* White text for active */
+    transform: translateY(0); /* Reset transform for active state */
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2); /* Inset shadow for active */
+    pointer-events: none; /* Disable clicking on active button */
+}
+
+/* Vocabulary Card Styling (Mobile Defaults) */
+.vocabulary-card-container {
+    width: 90%; /* Use a percentage for mobile responsiveness */
+    max-width: 400px; /* Limit max width for readability on larger mobile screens */
+    height: 400px; /* Mobile default: Slightly taller card for content */
+    perspective: 1000px; /* Advanced: 3D perspective for flip */
+    margin: 0 auto 30px auto;
+    display: flex; /* Flexbox for centering the card content */
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* Include padding/border in element's total width/height */
+}
+
+.vocabulary-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d; /* Advanced: Enables 3D transforms for children */
+    transition: transform 0.6s ease-in-out; /* Advanced: Transition for the flip */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    background-color: var(--bg-light); /* Default light background */
+    color: var(--text-dark);
+    cursor: pointer; /* Indicate it's clickable */
+}
+
+.vocabulary-card.flipped { /* Class added by JS to trigger flip */
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute; /* Essential for stacking */
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hides the back side of the element during 3D transforms */
+    -webkit-backface-visibility: hidden; /* For Safari */
+    border-radius: 15px;
+    padding: 25px;
+    display: flex; /* Use flexbox to center content */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden; /* Important for long text within the card */
+    transition: transform 0.6s ease-in-out; /* Add transition for the individual card faces */
+    /* position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; 
+    -webkit-backface-visibility: hidden; 
+    border-radius: 15px;
+    padding: 25px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden; Hide overflow of text initially */
+}
+
+
+/* Styles for the front of the card */
+.card-front {
+    background-color: var(--bg-light); /* Assuming this is white or light color */
+    color: var(--text-dark); /* Assuming this is a dark text color */
+    z-index: 2; /* Ensure the front is initially on top */
+    transform: rotateY(0deg); /* Default state: no rotation */
+}
+
+/* Styles for the back of the card */
+.card-back {
+    background-color: var(--primary-blue); /* This should make it blue */
+    color: var(--text-light); /* This should make text white */
+    transform: rotateY(180deg); /* Start rotated 180deg so its 'front' is facing away */
+}
+
+/* When the main .vocabulary-card is flipped (by JS adding the .flipped class) */
+.vocabulary-card.flipped .card-front {
+    transform: rotateY(-180deg); /* Rotate the front face away (counter-clockwise) */
+}
+
+.vocabulary-card.flipped .card-back {
+    transform: rotateY(0deg); /* Rotate the back face into view (from its initial 180deg) */
+}
+
+/* Adjust text colors for the flipped state for clarity */
+.vocabulary-card.flipped h3 {
+    color: var(--secondary-yellow); /* Yellow for translated word on blue background */
+}
+
+/* .card-front {
+    background-color: var(--bg-light);
+    z-index: 2; 
+}
+
+.card-back {
+    background-color: var(--primary-blue); 
+    color: var(--text-light); 
+    transform: rotateY(180deg); 
+    display: none; 
+}
+
+.vocabulary-card.flipped .card-front {
+    display: none; 
+}
+
+.vocabulary-card.flipped .card-back {
+    display: flex; 
+}
+
+.vocabulary-card h3 {
+    font-size: 2em; 
+    margin-bottom: 15px;
+    color: var(--primary-blue);
+}
+.vocabulary-card.flipped h3 {
+    color: var(--secondary-yellow); 
+} */
+
+.vocabulary-card .definition,
+.vocabulary-card .example,
+.vocabulary-card .translation,
+.vocabulary-card .translation-example {
+    font-size: 1em; /* Mobile default font size */
+    line-height: 1.6;
+    margin-bottom: 10px;
+    max-height: 100px; /* Limit height for long text on mobile */
+    overflow-y: auto; /* Scroll if content overflows */
+    padding: 0 5px; /* Less horizontal padding */
+    width: 100%;
+}
+
+.vocabulary-card .example,
+.vocabulary-card .translation-example {
+    font-style: italic;
+    color: #666; /* Muted color for examples */
+}
+.vocabulary-card.flipped .translation-example {
+    color: #ccc; /* Muted light color for examples on blue background */
+}
+
+.audio-button {
+    background-color: var(--accent-green);
+    color: var(--text-light);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Advanced: Transition */
+}
+
+.audio-button:hover { /* Advanced: Hover event */
+    background-color: #0e9a6e;
+    transform: translateY(-2px);
+}
+
+.card-hint {
+    font-size: 0.8em; /* Smaller hint on mobile */
+    color: #999;
+    margin-top: 15px;
+}
+.vocabulary-card.flipped .card-hint {
+    color: #e0e0e0;
+}
+
+
+/* Navigation Buttons (Mobile Defaults) */
+.vocabulary-navigation {
+    display: flex;
+    flex-direction: column; /* Mobile default: Stack buttons vertically */
+    align-items: center;   /* Center buttons horizontally */
+    gap: 15px;
+    margin-top: 20px;
+    padding: 0 15px; /* Add some padding */
+}
+
+.nav-button {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Advanced: Transition */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 80%;       /* Mobile default: Wider buttons */
+    max-width: 280px; /* Limit width */
+    justify-content: center; /* Center icon and text in button */
+}
+
+.nav-button:hover { /* Advanced: Hover event */
+    background-color: var(--secondary-yellow);
+    color: var(--primary-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.nav-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    color: #666;
+    transform: none;
+    box-shadow: none;
+}
+
+/* New word loading animation */
+@keyframes fadeInSlideUp { /* Advanced: Animation Keyframes */
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.vocabulary-card-container.animate-in .vocabulary-card {
+    animation: fadeInSlideUp 0.6s ease-out forwards; /* Advanced: Animation applied by JS */
+}
+
+/* =============================================== */
+/* Desktop View (min-width: 768px)                 */
+/* =============================================== */
+@media (min-width: 768px) {
+    /* Language Selector (Desktop Adjustments) */
+    .language-selector {
+        flex-direction: row; /* Desktop: Arrange buttons horizontally */
+        flex-wrap: nowrap; /* Prevent wrapping if enough space */
+        gap: 20px; /* More space between buttons */
+        padding: 0; /* Remove horizontal padding */
+    }
+
+    .lang-button {
+        width: auto; /* Allow buttons to size based on content */
+        max-width: none; /* Remove max-width constraint */
+        padding: 15px 30px; /* Slightly larger padding */
+        font-size: 1.05em; /* Slightly larger font */
+    }
+
+    /* Vocabulary Card Styling (Desktop Adjustments) */
+    .vocabulary-card-container {
+        max-width: 600px; /* Wider card on desktop */
+        height: 350px; /* Slightly shorter height on desktop if content allows, or keep 400px */
+        /* If 400px mobile was a temporary fix, use original 350px here */
+    }
+
+    .card-front,
+    .card-back {
+        padding: 30px; /* More padding on desktop */
+    }
+
+    .vocabulary-card h3 {
+        font-size: 2.5em; /* Larger font size on desktop */
+    }
+
+    .vocabulary-card .definition,
+    .vocabulary-card .example,
+    .vocabulary-card .translation,
+    .vocabulary-card .translation-example {
+        font-size: 1.1em; /* Larger font size on desktop */
+        max-height: 120px; /* More height for content */
+        padding: 0 10px; /* More horizontal padding */
+    }
+
+    .card-hint {
+        font-size: 0.85em; /* Slightly larger hint on desktop */
+        margin-top: 20px;
+    }
+
+    /* Navigation Buttons (Desktop Adjustments) */
+    .vocabulary-navigation {
+        flex-direction: row; /* Desktop: Arrange buttons horizontally */
+        gap: 30px; /* More space between buttons */
+        padding: 0; /* Remove horizontal padding */
+    }
+
+    .nav-button {
+        width: auto; /* Allow buttons to size based on content */
+        max-width: none; /* Remove max-width constraint */
+        padding: 15px 30px; /* Slightly larger padding */
+        font-size: 1.05em; /* Slightly larger font */
+    }
+}
+
+
+
+/* Add any other global styles here that affect padding, margin of sections, etc. */
+/* For example, if your .main-section has padding that needs to change for desktop */
+.main-section {
+    padding: 20px; /* Default mobile padding */
+    margin: 0 auto;
+    max-width: 900px; /* Limit overall content width */
+}
+
+@media (min-width: 768px) {
+    .main-section {
+        padding: 40px; /* More padding on desktop */
+    }
+}

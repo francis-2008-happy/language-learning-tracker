@@ -1,4 +1,5 @@
 import { WORDSAPI_KEY, OPENAI_API_KEY } from './config.js';
+import { fetchVocabularyData } from './vocabulary.js';
 // import config from "./config.js";
 
 
@@ -456,6 +457,18 @@ document.addEventListener('DOMContentLoaded', () => {
 function getCurrentUser() {
     return localStorage.getItem(CURRENT_USER_STORAGE_KEY);
 }
+
+
+// Initial load for general UI and page-specific modules
+document.addEventListener('DOMContentLoaded', () => {
+   
+    // Check if we are on the vocabulary page and initialize its logic
+    const vocabularySection = document.getElementById('vocabularySection');
+    if (vocabularySection) {
+        // Initialize vocabulary logic by fetching data
+        fetchVocabularyData();
+    }
+    });
 
     // --- Initial Page Load Calls ---
     renderTestimonials();

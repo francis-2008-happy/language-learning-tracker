@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Language Learning Tracker</title>
+    <title>Vocabulary Tracker - Language Learning</title>
     <link rel="stylesheet" href="src/styles/style.css">
+    <link rel="stylesheet" href="src/styles/vocabulary.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -52,12 +53,45 @@
             <span class="search-icon">🔍</span>
         </div>
 
-        <div>
-            <h1>Vocabulary List</h1>
-        </div>
+        <div id="mainContentArea">
+        <section id="vocabularySection" class="main-section">
+            <h2>Vocabulary Practice</h2>
 
+            <div class="language-selector">
+                <button class="lang-button active" data-lang="english">English</button>
+                <button class="lang-button" data-lang="french">French</button>
+                <button class="lang-button" data-lang="spanish">Spanish</button>
+                <button class="lang-button" data-lang="korean">Korean</button>
+            </div>
 
-        
+            <div class="vocabulary-card-container">
+                <div class="vocabulary-card">
+                    <div class="card-front">
+                        <h3 id="currentWord"></h3>
+                        <p id="wordDefinition" class="definition"></p>
+                        <p id="wordExample" class="example"></p>
+                        <button id="playAudio" class="audio-button" aria-label="Play pronunciation">
+                            <i class="fas fa-volume-up"></i> Play Audio
+                        </button>
+                        <div class="card-hint">Click card to see translation!</div>
+                    </div>
+                    <div class="card-back">
+                        <h3 id="translatedWord"></h3>
+                        <p id="translatedDefinition" class="translation"></p>
+                        <p id="translatedExample" class="translation-example"></p>
+                        <div class="card-hint">Click card to flip back!</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vocabulary-navigation">
+                <button id="prevWord" class="nav-button"><i class="fas fa-arrow-left"></i> Previous Word</button>
+                <button id="nextWord" class="nav-button">Next Word <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+        </section>
+    </div>
+
     </main>
 
 
@@ -147,7 +181,7 @@
         </div>
     </div>
 
-    <!-- <script src="scripts/config.js"></script> -->
+
     <script  type="module" src="src/scripts/script.js"></script>
     <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
 </body>

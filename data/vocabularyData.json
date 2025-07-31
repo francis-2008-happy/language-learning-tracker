@@ -1,0 +1,890 @@
+{
+    "english": [
+        {
+            "word": "Serendipity",
+            "definition": "The occurrence and development of events by chance in a happy or beneficial way.",
+            "example": "The discovery of penicillin was a fortunate act of serendipity.",
+            "translations": {
+                "french": {
+                    "word": "Sérendipité",
+                    "definition": "Le fait de faire des découvertes heureuses par hasard.",
+                    "example": "La découverte de la pénicilline fut un acte de sérendipité."
+                },
+                "spanish": {
+                    "word": "Serendipia",
+                    "definition": "Hallazgo afortunado e inesperado que se produce cuando se está buscando otra cosa.",
+                    "example": "El descubrimiento de la penicilina fue un acto de serendipia."
+                },
+                "korean": {
+                    "word": "뜻밖의 발견 (tteutbakui balgyeon)",
+                    "definition": "우연히 좋은 것을 발견하는 행운.",
+                    "example": "페니실린의 발견은 뜻밖의 발견이었다."
+                }
+            }
+        },
+        {
+            "word": "Ephemeral",
+            "definition": "Lasting for a very short time.",
+            "example": "Fashion trends are often ephemeral.",
+            "translations": {
+                "french": {
+                    "word": "Éphémère",
+                    "definition": "Qui ne dure qu'un temps très court.",
+                    "example": "Les tendances de la mode sont souvent éphémères."
+                },
+                "spanish": {
+                    "word": "Efímero",
+                    "definition": "Que dura por muy poco tiempo.",
+                    "example": "Las tendencias de la moda son a menudo efímeras."
+                },
+                "korean": {
+                    "word": "덧없는 (deoseomneun)",
+                    "definition": "매우 짧은 시간 동안만 지속되는.",
+                    "example": "패션 트렌드는 흔히 덧없다."
+                }
+            }
+        },
+        {
+            "word": "Ubiquitous",
+            "definition": "Present, appearing, or found everywhere.",
+            "example": "Smartphones have become ubiquitous in modern society.",
+            "translations": {
+                "french": {
+                    "word": "Omniprésent",
+                    "definition": "Présent partout à la fois.",
+                    "example": "Les smartphones sont devenus omniprésents dans la société moderne."
+                },
+                "spanish": {
+                    "word": "Ubicuo",
+                    "definition": "Que está presente en todas partes al mismo tiempo.",
+                    "example": "Los smartphones se han vuelto ubicuos en la sociedad moderna."
+                },
+                "korean": {
+                    "word": "어디에나 있는 (eodiena inneun)",
+                    "definition": "어디에서나 발견되거나 존재하는.",
+                    "example": "스마트폰은 현대 사회에서 어디에나 있게 되었다."
+                }
+            }
+        },
+        {
+            "word": "Mellifluous",
+            "definition": "(Of a voice or words) sweet or musical; pleasant to hear.",
+            "example": "Her mellifluous voice captivated the audience.",
+            "translations": {
+                "french": {
+                    "word": "Melliflue",
+                    "definition": "(De la voix ou des mots) doux ou musical; agréable à entendre.",
+                    "example": "Sa voix melliflue a captivé l'auditoire."
+                },
+                "spanish": {
+                    "word": "Melifluo",
+                    "definition": "(De una voz o palabras) dulce o musical; agradable al oído.",
+                    "example": "Su voz meliflua cautivó a la audiencia."
+                },
+                "korean": {
+                    "word": "감미로운 (gammiroun)",
+                    "definition": "(목소리나 말이) 달콤하거나 음악적이며 듣기 좋은.",
+                    "example": "그녀의 감미로운 목소리는 청중을 사로잡았다."
+                }
+            }
+        },
+        {
+            "word": "Cacophony",
+            "definition": "A harsh, discordant mixture of sounds.",
+            "example": "A cacophony of car horns echoed through the city streets.",
+            "translations": {
+                "french": {
+                    "word": "Cacophonie",
+                    "definition": "Mélange de sons rudes et discordants.",
+                    "example": "Une cacophonie de klaxons résonnait dans les rues de la ville."
+                },
+                "spanish": {
+                    "word": "Cacofonía",
+                    "definition": "Mezcla de sonidos duros y discordantes.",
+                    "example": "Una cacofonía de bocinas de coches resonaba por las calles de la ciudad."
+                },
+                "korean": {
+                    "word": "불협화음 (bulhyeopwaeum)",
+                    "definition": "불쾌하고 귀에 거슬리는 소리의 혼합.",
+                    "example": "도시의 거리에는 자동차 경적 소리의 불협화음이 울려 퍼졌다."
+                }
+            }
+        },
+        {
+            "word": "Benevolent",
+            "definition": "Well meaning and kindly.",
+            "example": "The benevolent queen was loved by all her subjects.",
+            "translations": {
+                "french": {
+                    "word": "Bienveillant",
+                    "definition": "Qui veut du bien et agit avec gentillesse.",
+                    "example": "La reine bienveillante était aimée de tous ses sujets."
+                },
+                "spanish": {
+                    "word": "Benévolo",
+                    "definition": "Que tiene buena voluntad y amabilidad.",
+                    "example": "La reina benévola era amada por todos sus súbditos."
+                },
+                "korean": {
+                    "word": "자비로운 (jabiroun)",
+                    "definition": "선의를 가지고 친절한.",
+                    "example": "그 자비로운 여왕은 모든 백성에게 사랑받았다."
+                }
+            }
+        },
+        {
+            "word": "Idiosyncrasy",
+            "definition": "A peculiarity of constitution or temperament; an eccentricity.",
+            "example": "One of his idiosyncrasies was his habit of always wearing odd socks.",
+            "translations": {
+                "french": {
+                    "word": "Idiosyncrasie",
+                    "definition": "Particularité de la constitution ou du tempérament; une excentricité.",
+                    "example": "Une de ses idiosyncrasies était son habitude de toujours porter des chaussettes dépareillées."
+                },
+                "spanish": {
+                    "word": "Idiosincrasia",
+                    "definition": "Peculiaridad de la constitución o del temperamento; una excentricidad.",
+                    "example": "Una de sus idiosincrasias era su costumbre de llevar siempre calcetines impares."
+                },
+                "korean": {
+                    "word": "특이성 (teugiseong)",
+                    "definition": "체질이나 기질의 특이함; 기벽.",
+                    "example": "그의 특이한 버릇 중 하나는 항상 짝짝이 양말을 신는 것이었다."
+                }
+            }
+        },
+        {
+            "word": "Nefarious",
+            "definition": "Wicked or criminal.",
+            "example": "The police caught the nefarious criminals plotting a bank robbery.",
+            "translations": {
+                "french": {
+                    "word": "Néfaste",
+                    "definition": "Mauvais ou criminel.",
+                    "example": "La police a attrapé les criminels néfastes complotant un vol de banque."
+                },
+                "spanish": {
+                    "word": "Nefario",
+                    "definition": "Malvado o criminal.",
+                    "example": "La policía atrapó a los criminales nefarios planeando un robo a un banco."
+                },
+                "korean": {
+                    "word": "사악한 (saakan)",
+                    "definition": "악하거나 범죄적인.",
+                    "example": "경찰은 은행 강도를 계획하던 사악한 범죄자들을 붙잡았다."
+                }
+            }
+        },
+        {
+            "word": "Pernicious",
+            "definition": "Having a harmful effect, especially in a gradual or subtle way.",
+            "example": "The pernicious influence of social media on mental health is a growing concern.",
+            "translations": {
+                "french": {
+                    "word": "Pernicieux",
+                    "definition": "Ayant un effet nuisible, surtout de manière graduelle ou subtile.",
+                    "example": "L'influence pernicieuse des médias sociaux sur la santé mentale est une préoccupation croissante."
+                },
+                "spanish": {
+                    "word": "Pernicioso",
+                    "definition": "Que causa gran daño o perjuicio, especialmente de manera gradual o sutil.",
+                    "example": "La influencia perniciosa de las redes sociales en la salud mental es una preocupación creciente."
+                },
+                "korean": {
+                    "word": "유해한 (yuhaehan)",
+                    "definition": "특히 점진적이거나 미묘한 방식으로 해로운 영향을 미치는.",
+                    "example": "소셜 미디어가 정신 건강에 미치는 유해한 영향은 증가하는 우려이다."
+                }
+            }
+        },
+        {
+            "word": "Meticulous",
+            "definition": "Showing great attention to detail; very careful and precise.",
+            "example": "She was meticulous in her research, checking every single source.",
+            "translations": {
+                "french": {
+                    "word": "Méticuleux",
+                    "definition": "Qui montre une grande attention aux détails; très attentif et précis.",
+                    "example": "Elle était méticuleuse dans ses recherches, vérifiant chaque source."
+                },
+                "spanish": {
+                    "word": "Meticuloso",
+                    "definition": "Que muestra gran atención a los detalles; muy cuidadoso y preciso.",
+                    "example": "Ella fue meticulosa en su investigación, revisando cada fuente."
+                },
+                "korean": {
+                    "word": "꼼꼼한 (kkomkkoman)",
+                    "definition": "세부 사항에 큰 주의를 기울이는; 매우 신중하고 정확한.",
+                    "example": "그녀는 모든 자료를 확인하며 연구에 꼼꼼했다."
+                }
+            }
+        }
+    ],
+    "french": [
+        {
+            "word": "Bienveillance",
+            "definition": "Disposition favorable à l'égard de quelqu'un ou de quelque chose.",
+            "example": "Elle a accueilli tout le monde avec une grande bienveillance.",
+            "translations": {
+                "english": {
+                    "word": "Kindness / Benevolence",
+                    "definition": "A favorable disposition towards someone or something.",
+                    "example": "She welcomed everyone with great kindness."
+                },
+                "spanish": {
+                    "word": "Benevolencia",
+                    "definition": "Disposición favorable hacia alguien o algo.",
+                    "example": "Ella recibió a todos con gran benevolencia."
+                },
+                "korean": {
+                    "word": "친절 (chinjeol)",
+                    "definition": "누군가 또는 무언가에 대한 호의적인 태도.",
+                    "example": "그녀는 모두를 큰 친절로 맞이했다."
+                }
+            }
+        },
+        {
+            "word": "Épanouissement",
+            "definition": "Développement heureux et complet (d'une personne, d'une faculté).",
+            "example": "Le sport contribue à son épanouissement personnel.",
+            "translations": {
+                "english": {
+                    "word": "Fulfillment / Flourishing",
+                    "definition": "Happy and complete development (of a person, a faculty).",
+                    "example": "Sports contribute to his personal fulfillment."
+                },
+                "spanish": {
+                    "word": "Realización / Florecimiento",
+                    "definition": "Desarrollo feliz y completo (de una persona, una facultad).",
+                    "example": "El deporte contribuye a su realización personal."
+                },
+                "korean": {
+                    "word": "성장 (seongjang)",
+                    "definition": "개인이나 능력의 행복하고 완전한 발전.",
+                    "example": "스포츠는 그의 개인적인 성장에 기여한다."
+                }
+            }
+        },
+        {
+            "word": "Insaisissable",
+            "definition": "Qu'on ne peut saisir, retenir, comprendre.",
+            "example": "Son charme était insaisissable et mystérieux.",
+            "translations": {
+                "english": {
+                    "word": "Elusive / Intangible",
+                    "definition": "That which cannot be grasped, held, or understood.",
+                    "example": "Her charm was elusive and mysterious."
+                },
+                "spanish": {
+                    "word": "Inasible",
+                    "definition": "Que no se puede asir, retener o comprender.",
+                    "example": "Su encanto era inasible y misterioso."
+                },
+                "korean": {
+                    "word": "파악하기 어려운 (paakhagi eoryeoun)",
+                    "definition": "붙잡거나 이해할 수 없는.",
+                    "example": "그녀의 매력은 파악하기 어렵고 신비로웠다."
+                }
+            }
+        },
+        {
+            "word": "Dépaysant",
+            "definition": "Qui dépayse, fait ressentir un changement d'ambiance, de cadre.",
+            "example": "Voyager dans ce pays fut une expérience très dépaysante.",
+            "translations": {
+                "english": {
+                    "word": "Exotic / Disorienting (in a good way)",
+                    "definition": "That which changes one's usual surroundings, giving a feeling of being in a foreign place.",
+                    "example": "Traveling to this country was a very exotic experience."
+                },
+                "spanish": {
+                    "word": "Exótico / Desacostumbrado",
+                    "definition": "Que cambia el ambiente o el entorno habitual.",
+                    "example": "Viajar a este país fue una experiencia muy exótica."
+                },
+                "korean": {
+                    "word": "이국적인 (igukjeogin)",
+                    "definition": "분위기나 환경의 변화를 느끼게 하여 낯설게 하는.",
+                    "example": "이 나라로 여행하는 것은 매우 이국적인 경험이었다."
+                }
+            }
+        },
+        {
+            "word": "Convivialité",
+            "definition": "Caractère de ce qui est convivial, agréable à vivre.",
+            "example": "L'ambiance du restaurant était pleine de convivialité.",
+            "translations": {
+                "english": {
+                    "word": "Friendliness / Conviviality",
+                    "definition": "The quality of being friendly, lively, and enjoyable.",
+                    "example": "The atmosphere of the restaurant was full of conviviality."
+                },
+                "spanish": {
+                    "word": "Convivialidad",
+                    "definition": "Carácter de lo que es amigable y agradable para vivir.",
+                    "example": "El ambiente del restaurante estaba lleno de convivialidad."
+                },
+                "korean": {
+                    "word": "친목 (chinmok)",
+                    "definition": "친근하고 즐거운 특성.",
+                    "example": "그 레스토랑의 분위기는 친목으로 가득했다."
+                }
+            }
+        },
+        {
+            "word": "Héliport",
+            "definition": "Plate-forme aménagée pour l'atterrissage et le décollage d'hélicoptères.",
+            "example": "L'hôpital a un héliport sur le toit pour les urgences.",
+            "translations": {
+                "english": {
+                    "word": "Heliport",
+                    "definition": "A landing and take-off platform for helicopters.",
+                    "example": "The hospital has a heliport on the roof for emergencies."
+                },
+                "spanish": {
+                    "word": "Helipuerto",
+                    "definition": "Plataforma acondicionada para el aterrizaje y despegue de helicópteros.",
+                    "example": "El hospital tiene un helipuerto en el tejado para emergencias."
+                },
+                "korean": {
+                    "word": "헬기장 (helgijang)",
+                    "definition": "헬리콥터의 이착륙을 위해 마련된 플랫폼.",
+                    "example": "병원은 응급 상황을 위해 옥상에 헬기장을 갖추고 있다."
+                }
+            }
+        },
+        {
+            "word": "Péripétie",
+            "definition": "Événement inattendu qui modifie le cours d'une action, d'une situation.",
+            "example": "Le voyage fut plein de péripéties, mais nous sommes arrivés sains et saufs.",
+            "translations": {
+                "english": {
+                    "word": "Twist / Turn of events / Peripeteia",
+                    "definition": "An unexpected event that alters the course of an action or situation.",
+                    "example": "The journey was full of twists and turns, but we arrived safe and sound."
+                },
+                "spanish": {
+                    "word": "Peripecias",
+                    "definition": "Evento inesperado que modifica el curso de una acción o situación.",
+                    "example": "El viaje estuvo lleno de peripecias, pero llegamos sanos y salvos."
+                },
+                "korean": {
+                    "word": "예상치 못한 사건 (yesangchi motan sageon)",
+                    "definition": "행동이나 상황의 흐름을 바꾸는 예상치 못한 사건.",
+                    "example": "여행은 예상치 못한 사건들로 가득했지만, 우리는 무사히 도착했다."
+                }
+            }
+        },
+        {
+            "word": "Quotidien",
+            "definition": "Qui se fait, arrive tous les jours; la vie de tous les jours.",
+            "example": "Lire un livre est une partie essentielle de son quotidien.",
+            "translations": {
+                "english": {
+                    "word": "Daily / Everyday life",
+                    "definition": "That which happens every day; everyday life.",
+                    "example": "Reading a book is an essential part of his daily routine."
+                },
+                "spanish": {
+                    "word": "Cotidiano",
+                    "definition": "Que se hace o sucede todos los días; la vida diaria.",
+                    "example": "Leer un libro es una parte esencial de su vida cotidiana."
+                },
+                "korean": {
+                    "word": "일상의 (ilsangui)",
+                    "definition": "매일 일어나거나 하는 것; 매일의 삶.",
+                    "example": "책을 읽는 것은 그의 일상에서 중요한 부분이다."
+                }
+            }
+        },
+        {
+            "word": "Sollicitude",
+            "definition": "Attitude de préoccupation attentive et affectueuse envers quelqu'un.",
+            "example": "Elle a montré une grande sollicitude envers ses parents âgés.",
+            "translations": {
+                "english": {
+                    "word": "Solicitude / Concern",
+                    "definition": "An attitude of attentive and affectionate concern towards someone.",
+                    "example": "She showed great solicitude towards her elderly parents."
+                },
+                "spanish": {
+                    "word": "Sollicitud",
+                    "definition": "Actitud de preocupación atenta y afectuosa hacia alguien.",
+                    "example": "Mostró gran solicitud hacia sus padres ancianos."
+                },
+                "korean": {
+                    "word": "배려 (baeryeo)",
+                    "definition": "누군가에 대한 세심하고 애정 어린 관심의 태도.",
+                    "example": "그녀는 나이든 부모님에게 큰 배려를 보였다."
+                }
+            }
+        },
+        {
+            "word": "Réciproque",
+            "definition": "Qui est échangé entre deux personnes ou deux groupes; mutuel.",
+            "example": "Leur amitié était basée sur un respect réciproque.",
+            "translations": {
+                "english": {
+                    "word": "Reciprocal / Mutual",
+                    "definition": "That which is exchanged between two people or groups; mutual.",
+                    "example": "Their friendship was based on reciprocal respect."
+                },
+                "spanish": {
+                    "word": "Recíproco",
+                    "definition": "Que es intercambiado entre dos personas o dos grupos; mutuo.",
+                    "example": "Su amistad se basaba en el respeto recíproco."
+                },
+                "korean": {
+                    "word": "상호적인 (sanghojeogin)",
+                    "definition": "두 사람 또는 두 그룹 사이에 교환되는; 상호적인.",
+                    "example": "그들의 우정은 상호적인 존중에 기반을 두었다."
+                }
+            }
+        }
+    ],
+    "spanish": [
+        {
+            "word": "Resiliencia",
+            "definition": "Capacidad de adaptarse positivamente a situaciones adversas.",
+            "example": "Su resiliencia le permitió superar grandes dificultades.",
+            "translations": {
+                "english": {
+                    "word": "Resilience",
+                    "definition": "The capacity to recover quickly from difficulties; toughness.",
+                    "example": "Her resilience allowed her to overcome great difficulties."
+                },
+                "french": {
+                    "word": "Résilience",
+                    "definition": "Capacité à s'adapter positivement aux situations difficiles.",
+                    "example": "Sa résilience lui a permis de surmonter de grandes difficultés."
+                },
+                "korean": {
+                    "word": "회복력 (hoebokryeok)",
+                    "definition": "역경에 긍정적으로 적응하는 능력.",
+                    "example": "그녀의 회복력은 큰 어려움을 극복하게 해주었다."
+                }
+            }
+        },
+        {
+            "word": "Eficaz",
+            "definition": "Que produce el efecto esperado; que funciona bien.",
+            "example": "Este método es muy eficaz para aprender idiomas.",
+            "translations": {
+                "english": {
+                    "word": "Effective",
+                    "definition": "Producing the desired or intended result.",
+                    "example": "This method is very effective for learning languages."
+                },
+                "french": {
+                    "word": "Efficace",
+                    "definition": "Qui produit l'effet attendu; qui fonctionne bien.",
+                    "example": "Cette méthode est très efficace pour apprendre des langues."
+                },
+                "korean": {
+                    "word": "효과적인 (hyogwajeogin)",
+                    "definition": "기대되는 효과를 내는; 잘 작동하는.",
+                    "example": "이 방법은 언어 학습에 매우 효과적이다."
+                }
+            }
+        },
+        {
+            "word": "Añoranza",
+            "definition": "Sentimiento de tristeza o melancolía causado por la ausencia o la pérdida de algo o alguien.",
+            "example": "Sentía una profunda añoranza por su país natal.",
+            "translations": {
+                "english": {
+                    "word": "Nostalgia / Longing",
+                    "definition": "A feeling of sadness or melancholy caused by the absence or loss of something or someone.",
+                    "example": "He felt a deep longing for his homeland."
+                },
+                "french": {
+                    "word": "Nostalgie",
+                    "definition": "Sentiment de tristesse ou de mélancolie causé par l'absence ou la perte de quelque chose ou quelqu'un.",
+                    "example": "Il ressentait une profonde nostalgie de son pays natal."
+                },
+                "korean": {
+                    "word": "향수 (hyangsu)",
+                    "definition": "어떤 것 또는 누군가의 부재나 상실로 인한 슬픔이나 우울함.",
+                    "example": "그는 고향에 대한 깊은 향수를 느꼈다."
+                }
+            }
+        },
+        {
+            "word": "Empatía",
+            "definition": "Capacidad de comprender y compartir los sentimientos de otro.",
+            "example": "Su empatía le permitió conectar fácilmente con los demás.",
+            "translations": {
+                "english": {
+                    "word": "Empathy",
+                    "definition": "The ability to understand and share the feelings of another.",
+                    "example": "Her empathy allowed her to easily connect with others."
+                },
+                "french": {
+                    "word": "Empathie",
+                    "definition": "Capacité à comprendre et à partager les sentiments d'autrui.",
+                    "example": "Son empathie lui a permis de se connecter facilement avec les autres."
+                },
+                "korean": {
+                    "word": "공감 (gonggam)",
+                    "definition": "타인의 감정을 이해하고 공유하는 능력.",
+                    "example": "그녀의 공감 능력은 다른 사람들과 쉽게 소통할 수 있게 해주었다."
+                }
+            }
+        },
+        {
+            "word": "Efímero",
+            "definition": "Que dura por muy poco tiempo.",
+            "example": "La belleza de las flores es efímera.",
+            "translations": {
+                "english": {
+                    "word": "Ephemeral",
+                    "definition": "Lasting for a very short time.",
+                    "example": "The beauty of flowers is ephemeral."
+                },
+                "french": {
+                    "word": "Éphémère",
+                    "definition": "Qui ne dure qu'un temps très court.",
+                    "example": "La beauté des fleurs est éphémère."
+                },
+                "korean": {
+                    "word": "덧없는 (deoseomneun)",
+                    "definition": "매우 짧은 시간 동안만 지속되는.",
+                    "example": "꽃의 아름다움은 덧없다."
+                }
+            }
+        },
+        {
+            "word": "Sostenible",
+            "definition": "Que se puede mantener durante largo tiempo sin agotar los recursos.",
+            "example": "Necesitamos crear un futuro más sostenible para las próximas generaciones.",
+            "translations": {
+                "english": {
+                    "word": "Sustainable",
+                    "definition": "Able to be maintained at a certain rate or level.",
+                    "example": "We need to create a more sustainable future for the next generations."
+                },
+                "french": {
+                    "word": "Durable",
+                    "definition": "Qui peut être maintenu longtemps sans épuiser les ressources.",
+                    "example": "Nous devons créer un avenir plus durable pour les prochaines générations."
+                },
+                "korean": {
+                    "word": "지속 가능한 (jisok ganŭnghan)",
+                    "definition": "자원을 고갈시키지 않고 오랫동안 유지될 수 있는.",
+                    "example": "우리는 다음 세대를 위해 더 지속 가능한 미래를 만들어야 한다."
+                }
+            }
+        },
+        {
+            "word": "Altruismo",
+            "definition": "Tendencia a procurar el bien de los demás de manera desinteresada.",
+            "example": "Su altruismo lo llevó a dedicar su vida a la caridad.",
+            "translations": {
+                "english": {
+                    "word": "Altruism",
+                    "definition": "Disinterested and selfless concern for the well-being of others.",
+                    "example": "His altruism led him to dedicate his life to charity."
+                },
+                "french": {
+                    "word": "Altruisme",
+                    "definition": "Tendance à se soucier du bien des autres de manière désintéressée.",
+                    "example": "Son altruisme l'a conduit à consacrer sa vie à la charité."
+                },
+                "korean": {
+                    "word": "이타주의 (itajuui)",
+                    "definition": "타인의 행복을 위한 사심 없고 이기적이지 않은 관심.",
+                    "example": "그의 이타주의는 그가 자선에 평생을 바치게 만들었다."
+                }
+            }
+        },
+        {
+            "word": "Paradójico",
+            "definition": "Que incluye o implica una paradoja.",
+            "example": "Es paradójico que tener más opciones a veces nos haga menos felices.",
+            "translations": {
+                "english": {
+                    "word": "Paradoxical",
+                    "definition": "Seemingly absurd or self-contradictory.",
+                    "example": "It's paradoxical that having more choices sometimes makes us less happy."
+                },
+                "french": {
+                    "word": "Paradoxal",
+                    "definition": "Qui inclut ou implique un paradoxe.",
+                    "example": "Il est paradoxal qu'avoir plus de choix nous rende parfois moins heureux."
+                },
+                "korean": {
+                    "word": "역설적인 (yeoksseoljeogin)",
+                    "definition": "역설을 포함하거나 암시하는.",
+                    "example": "더 많은 선택지가 때로는 우리를 덜 행복하게 만든다는 것은 역설적이다."
+                }
+            }
+        },
+        {
+            "word": "Convicción",
+            "definition": "Seguridad que tiene una persona de la verdad o certeza de algo.",
+            "example": "Habló con gran convicción sobre la importancia de la educación.",
+            "translations": {
+                "english": {
+                    "word": "Conviction",
+                    "definition": "A firm belief or opinion.",
+                    "example": "He spoke with great conviction about the importance of education."
+                },
+                "french": {
+                    "word": "Conviction",
+                    "definition": "Certitude qu'une personne a de la vérité ou de la certitude de quelque chose.",
+                    "example": "Il a parlé avec une grande conviction de l'importance de l'éducation."
+                },
+                "korean": {
+                    "word": "확신 (hwaksin)",
+                    "definition": "어떤 것의 진실성이나 확실성에 대한 개인의 확고한 믿음.",
+                    "example": "그는 교육의 중요성에 대해 큰 확신을 가지고 말했다."
+                }
+            }
+        },
+        {
+            "word": "Efímero",
+            "definition": "Que dura por muy poco tiempo.",
+            "example": "La belleza de las flores es efímera.",
+            "translations": {
+                "english": {
+                    "word": "Ephemeral",
+                    "definition": "Lasting for a very short time.",
+                    "example": "The beauty of flowers is ephemeral."
+                },
+                "french": {
+                    "word": "Éphémère",
+                    "definition": "Qui ne dure qu'un temps très court.",
+                    "example": "La beauté des fleurs est éphémère."
+                },
+                "korean": {
+                    "word": "덧없는 (deoseomneun)",
+                    "definition": "매우 짧은 시간 동안만 지속되는.",
+                    "example": "꽃의 아름다움은 덧없다."
+                }
+            }
+        }
+    ],
+    "korean": [
+        {
+            "word": "사랑 (sarang)",
+            "definition": "누군가에 대한 강한 애정이나 애착의 감정.",
+            "example": "나는 내 가족을 매우 사랑한다.",
+            "translations": {
+                "english": {
+                    "word": "Love",
+                    "definition": "A strong feeling of affection or attachment towards someone.",
+                    "example": "I love my family very much."
+                },
+                "french": {
+                    "word": "Amour",
+                    "definition": "Un sentiment fort d'affection ou d'attachement envers quelqu'un.",
+                    "example": "J'aime beaucoup ma famille."
+                },
+                "spanish": {
+                    "word": "Amor",
+                    "definition": "Un sentimiento fuerte de afecto o apego hacia alguien.",
+                    "example": "Amo mucho a mi familia."
+                }
+            }
+        },
+        {
+            "word": "안녕하세요 (annyeonghaseyo)",
+            "definition": "한국어에서 '안녕하세요'는 일반적인 인사말로, '안녕하세요?'는 '안녕?'이다.",
+            "example": "아침에 친구에게 '안녕하세요'라고 인사했다.",
+            "translations": {
+                "english": {
+                    "word": "Hello / How are you?",
+                    "definition": "A common greeting in Korean. 'Annyeonghaseyo?' is 'How are you?'",
+                    "example": "I greeted my friend with 'Annyeonghaseyo' in the morning."
+                },
+                "french": {
+                    "word": "Bonjour / Comment allez-vous ?",
+                    "definition": "Une salutation courante en coréen. 'Annyeonghaseyo?' signifie 'Comment allez-vous ?'",
+                    "example": "J'ai salué mon ami avec '안녕하세요' le matin."
+                },
+                "spanish": {
+                    "word": "Hola / ¿Cómo está?",
+                    "definition": "Un saludo común en coreano. 'Annyeonghaseyo?' es '¿Cómo estás?'",
+                    "example": "Saludé a mi amigo con '안녕하세요' por la mañana."
+                }
+            }
+        },
+        {
+            "word": "감사합니다 (gamsahamnida)",
+            "definition": "'고마워요' 또는 '고맙습니다'보다 더 정중한 표현으로, '감사합니다'는 '감사합니다'이다.",
+            "example": "도와주셔서 감사합니다.",
+            "translations": {
+                "english": {
+                    "word": "Thank you",
+                    "definition": "A more formal way to say 'thank you' than 'gomawoyo' or 'gomapseumnida'.",
+                    "example": "Thank you for your help."
+                },
+                "french": {
+                    "word": "Merci",
+                    "definition": "Une manière plus formelle de dire 'merci' que 'gomawoyo' ou 'gomapseumnida'.",
+                    "example": "Merci pour votre aide."
+                },
+                "spanish": {
+                    "word": "Gracias",
+                    "definition": "Una forma más formal de decir 'gracias' que 'gomawoyo' o 'gomapseumnida'.",
+                    "example": "Gracias por tu ayuda."
+                }
+            }
+        },
+        {
+            "word": "행복 (haengbok)",
+            "definition": "만족하거나 즐거운 상태.",
+            "example": "그녀는 가족과 함께 있을 때 행복을 느낀다.",
+            "translations": {
+                "english": {
+                    "word": "Happiness",
+                    "definition": "The state of being happy or content.",
+                    "example": "She feels happiness when she is with her family."
+                },
+                "french": {
+                    "word": "Bonheur",
+                    "definition": "L'état d'être heureux ou satisfait.",
+                    "example": "Elle ressent du bonheur quand elle est avec sa famille."
+                },
+                "spanish": {
+                    "word": "Felicidad",
+                    "definition": "El estado de estar feliz o contento.",
+                    "example": "Ella siente felicidad cuando está con su familia."
+                }
+            }
+        },
+        {
+            "word": "희망 (huimang)",
+            "definition": "어떤 일이 일어나기를 바라는 기대와 열망.",
+            "example": "그는 항상 더 나은 미래를 희망한다.",
+            "translations": {
+                "english": {
+                    "word": "Hope",
+                    "definition": "A feeling of expectation and desire for something to happen.",
+                    "example": "He always hopes for a better future."
+                },
+                "french": {
+                    "word": "Espoir",
+                    "definition": "Un sentiment d'attente et de désir que quelque chose se produise.",
+                    "example": "Il espère toujours un avenir meilleur."
+                },
+                "spanish": {
+                    "word": "Esperanza",
+                    "definition": "Un sentimiento de expectativa y deseo de que algo suceda.",
+                    "example": "Siempre tiene esperanza de un futuro mejor."
+                }
+            }
+        },
+        {
+            "word": "꿈 (kkum)",
+            "definition": "잠자는 동안 뇌에서 만들어지는 일련의 이미지, 생각, 감각.",
+            "example": "어젯밤에 이상한 꿈을 꿨다.",
+            "translations": {
+                "english": {
+                    "word": "Dream",
+                    "definition": "A series of images, thoughts, and sensations occurring in a person's mind during sleep.",
+                    "example": "I had a strange dream last night."
+                },
+                "french": {
+                    "word": "Rêve",
+                    "definition": "Une série d'images, de pensées et de sensations qui se produisent dans l'esprit d'une personne pendant le sommeil.",
+                    "example": "J'ai fait un rêve étrange la nuit dernière."
+                },
+                "spanish": {
+                    "word": "Sueño",
+                    "definition": "Una serie de imágenes, pensamientos y sensaciones que ocurren en la mente de una persona mientras duerme.",
+                    "example": "Tuve un sueño extraño anoche."
+                }
+            }
+        },
+        {
+            "word": "하늘 (haneul)",
+            "definition": "지구의 대기 또는 우주 공간.",
+            "example": "맑은 날에는 하늘이 파랗다.",
+            "translations": {
+                "english": {
+                    "word": "Sky",
+                    "definition": "The atmosphere above the Earth or outer space as viewed from Earth.",
+                    "example": "The sky is blue on a clear day."
+                },
+                "french": {
+                    "word": "Ciel",
+                    "definition": "L'atmosphère au-dessus de la Terre ou l'espace extra-atmosphérique vu de la Terre.",
+                    "example": "Le ciel est bleu par temps clair."
+                },
+                "spanish": {
+                    "word": "Cielo",
+                    "definition": "La atmósfera sobre la Tierra o el espacio exterior visto desde la Tierra.",
+                    "example": "El cielo está azul en un día despejado."
+                }
+            }
+        },
+        {
+            "word": "바다 (bada)",
+            "definition": "지표면의 대부분을 덮고 있는 광대한 염수.",
+            "example": "여름에는 바다에서 수영하는 것을 좋아한다.",
+            "translations": {
+                "english": {
+                    "word": "Sea / Ocean",
+                    "definition": "The expanse of salt water that covers most of the earth's surface.",
+                    "example": "I love swimming in the sea in summer."
+                },
+                "french": {
+                    "word": "Mer / Océan",
+                    "definition": "L'étendue d'eau salée qui couvre la majeure partie de la surface de la Terre.",
+                    "example": "J'adore nager dans la mer en été."
+                },
+                "spanish": {
+                    "word": "Mar / Océano",
+                    "definition": "La extensión de agua salada que cubre la mayor parte de la superficie terrestre.",
+                    "example": "Me encanta nadar en el mar en verano."
+                }
+            }
+        },
+        {
+            "word": "친구 (chingu)",
+            "definition": "서로 애정을 가지고 함께 시간을 보내는 사람.",
+            "example": "나는 내 친구들과 영화 보러 갔다.",
+            "translations": {
+                "english": {
+                    "word": "Friend",
+                    "definition": "A person whom one knows and with whom one has a bond of mutual affection.",
+                    "example": "I went to watch a movie with my friends."
+                },
+                "french": {
+                    "word": "Ami(e)",
+                    "definition": "Une personne que l'on connaît et avec qui on a un lien d'affection mutuelle.",
+                    "example": "Je suis allé(e) voir un film avec mes amis."
+                },
+                "spanish": {
+                    "word": "Amigo(a)",
+                    "definition": "Una persona a quien uno conoce y con quien tiene un vínculo de afecto mutuo.",
+                    "example": "Fui a ver una película con mis amigos."
+                }
+            }
+        },
+        {
+            "word": "가족 (gajok)",
+            "definition": "혈연, 결혼 또는 입양으로 연결된 사람들의 그룹.",
+            "example": "우리 가족은 매년 휴가를 함께 보낸다.",
+            "translations": {
+                "english": {
+                    "word": "Family",
+                    "definition": "A group of people related by blood, marriage, or adoption.",
+                    "example": "My family spends holidays together every year."
+                },
+                "french": {
+                    "word": "Famille",
+                    "definition": "Un groupe de personnes liées par le sang, le mariage ou l'adoption.",
+                    "example": "Ma famille passe les vacances ensemble chaque année."
+                },
+                "spanish": {
+                    "word": "Familia",
+                    "definition": "Un grupo de personas unidas por sangre, matrimonio o adopción.",
+                    "example": "Mi familia pasa las vacaciones juntas todos los años."
+                }
+            }
+        }
+    ]
+}

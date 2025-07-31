@@ -5,6 +5,14 @@
 /* =============================================== */
 
 /* Language Selector (Mobile Defaults) */
+
+.main-section h2{
+    background-color: var(--primary-blue);
+    text-align: center;
+    padding: 10px; /* Blue background for the main section */
+    color: var(--bg-light);
+    margin-bottom: 2rem;/* Space below the heading */
+}
 .language-selector {
     margin-bottom: 30px;
     display: flex;
@@ -278,6 +286,98 @@
     animation: fadeInSlideUp 0.6s ease-out forwards; /* Advanced: Animation applied by JS */
 }
 
+/* Photo design  */
+
+.photo-gallery-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+  padding: 2rem;
+}
+
+/* Base photo styles */
+.gallery-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  /* border: 2px solid #ccc; */
+  border-radius: 10px;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+/* Make the main image much larger on mobile */
+.main-photo {
+  width: 300px;
+  height: 300px;
+  z-index: 1;
+}
+
+.gallery-photo:nth-child(2){
+    width: 200px;
+    height: 200px;
+    z-index: 3;
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    border: solid 20px #ffffff;
+}
+
+
+.gallery-photo:nth-child(4){
+    width: 200px;
+    height: 200px;
+    z-index: 3;
+    position: absolute;
+    bottom: 25%;
+    right: 5%;
+    border: solid 20px #ffffff;
+}
+
+
+/* Wrapper around photo 3 */
+.photo-link-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Transparent white overlay */
+.photo-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(7, 75, 223, 0.252); /* white with transparency */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+/* Text link */
+.photo-link {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--primary-blue);
+  background-color: var(--bg-light);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
 /* =============================================== */
 /* Desktop View (min-width: 768px)                 */
 /* =============================================== */
@@ -288,6 +388,7 @@
         flex-wrap: nowrap; /* Prevent wrapping if enough space */
         gap: 20px; /* More space between buttons */
         padding: 0; /* Remove horizontal padding */
+        margin-left: 8rem;
     }
 
     .lang-button {
@@ -295,6 +396,8 @@
         max-width: none; /* Remove max-width constraint */
         padding: 15px 30px; /* Slightly larger padding */
         font-size: 1.05em; /* Slightly larger font */
+        margin-top: 2rem; /* Add some top margin for spacing */
+        
     }
 
     /* Vocabulary Card Styling (Desktop Adjustments) */
@@ -332,6 +435,8 @@
         flex-direction: row; /* Desktop: Arrange buttons horizontally */
         gap: 30px; /* More space between buttons */
         padding: 0; /* Remove horizontal padding */
+        margin-left: 13rem;
+        margin-top: 4rem; /* Add some top margin for spacing */
     }
 
     .nav-button {
@@ -340,6 +445,123 @@
         padding: 15px 30px; /* Slightly larger padding */
         font-size: 1.05em; /* Slightly larger font */
     }
+
+
+
+    /* Photo design adjustments for desktop */
+
+
+      .photo-gallery-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 4rem;
+  }
+
+  .gallery-photo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .main-photo {
+    width: 350px;
+    height: 350px;
+    z-index: 2;
+  }
+
+  .gallery-photo:nth-child(2) {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 0%;
+    left: 30%;
+    z-index: 3;
+    border: solid 10px #ffffff;
+  }
+
+  .gallery-photo:nth-child(4) {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    bottom: 0%;
+    right: 30%;
+    z-index: 3;
+    border: solid 10px #ffffff;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* .main-photo {
+        width: 500px;
+        height: 500px;
+    }
+
+    .photo-gallery-container {
+    display: grid;
+    place-items: center;
+    height: 500px;
+  } */
+
+  /* Position each photo manually */
+  /* .gallery-photo:nth-child(1) {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    width: 250px;
+    height: 250px;
+    border: solid 20px #ffffff; 
+    z-index: 2;
+
+  } */
+
+  /* .gallery-photo:nth-child(2) {
+    position: absolute;
+    top: 10%;
+    right: 15%;
+    width: 250px;
+    height: 250px;
+    border: solid 20px #ffffff; 
+    z-index: 2;
+  } */
+/* 
+  .gallery-photo:nth-child(3) {
+    position: relative; /* center stays in flow */
+    /* width: 500px;
+    height: 500px;
+    z-index: 1;
+  }  */
+
+  /* .gallery-photo:nth-child(4) {
+    position: absolute;
+    bottom: 0%;
+    left: 10%;
+    width: 250px;
+    height: 250px;
+    border: solid 20px #ffffff; 
+    z-index: 2;
+  } */
+/* 
+  .gallery-photo:nth-child(5) {
+    position: absolute;
+    bottom: 0%;
+    right: 10%;
+    width: 250px;
+    height: 250px;
+    border: solid 20px #ffffff; 
+    z-index: 2;
+  } */
+
 }
 
 

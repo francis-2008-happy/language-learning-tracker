@@ -144,6 +144,23 @@ header .container {
     /* order: 3; */
 }
 
+.welcome-message{
+    text-align: center;
+    color: var(--primary-blue);
+    margin-left: 2rem;
+    margin-right: 2rem;
+    /* gap: 1rem; */
+}
+
+.welcome-message p{
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.5; /* Better readability */
+}
+
+
 /* Sidebar (Mobile-first: off-screen and hidden by default) */
 .sidebar {
     position: fixed; /* Fixed position relative to viewport */
